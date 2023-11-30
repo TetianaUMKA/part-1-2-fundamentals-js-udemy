@@ -17,3 +17,13 @@ let myCurrentJob = "Teacher";
 5. Symbol(ES2015): value that is unique and cannot be changed (Not useful for now)
 6. Biglnt(ES2020): Larger integers than the Number type can hold
 */
+
+let javaScript = true;
+console.log(javaScript);
+
+console.log(typeof javaScript); // boolean
+console.log(typeof 23); // number
+console.log(typeof "Jonas"); // string
+console.log(typeof undefined); // undefined
+console.log(typeof null); // object //it is the bug of JS
+console.log(typeof BigInt); // function
