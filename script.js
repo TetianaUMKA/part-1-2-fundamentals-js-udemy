@@ -1,5 +1,5 @@
 // Variable name conventions
-let jonas_matilda = "JM";
+let jonas_schmedtmann = "JM";
 let $Function = 27;
 
 let person = "jonas";
@@ -27,3 +27,41 @@ console.log(typeof "Jonas"); // string
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object //it is the bug of JS
 console.log(typeof BigInt); // function
+
+/* Three ways of declaring variables in JS: 
+/let/  we can do reassigning a value to a variable or we can say "mutate a variable" 
+/const/  immutable variable
+/var/
+*/
+
+// Mathematic or arihtmetic operators
+const now = 2023;
+const ageJonas = now - 1991;
+const ageSarah = now - 2000;
+console.log(ageJonas, ageSarah); // 32 23
+
+console.log(ageJonas * 2, ageJonas / 10, 2 ** 3); // 64 2.3 8
+// 2**3 means 2 to the power of 3 equals 2*2*2
+
+const firstName = "Jonas";
+const lastName = "Schmedtmann";
+console.log(firstName + " " + lastName); // Jonas Schmedtmann // doing concatenation
+
+// Assignment operator '='
+
+let x = 10 + 5; // 15
+x += 10; // x = x + 10 = 25
+x *= 4; // x = x * 4 = 100
+x++; // x = x + 1 = 101
+x--; // x = x - 1 = 100
+x -= 1; // x = x - 1 = 99
+console.log(x);
+
+// comparison operators
+console.log(ageJonas > ageSarah); // true
+console.log(ageJonas >= 20); // true
+console.log(ageJonas < ageSarah); // false
+console.log(ageJonas <= 20); // false
+
+const olderAge = now - 1991 > now - 2000;
+console.log(olderAge); // true
