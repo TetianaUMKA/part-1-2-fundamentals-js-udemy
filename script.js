@@ -65,3 +65,14 @@ console.log(ageJonas <= 20); // false
 
 const olderAge = now - 1991 > now - 2000;
 console.log(olderAge); // true
+
+// Operator precedence orders which operator will be executed at first
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence
+
+console.log(25 - 10 - 5); // 10
+//because unary negation operator '-' is read  left-to-right
+
+let a, b;
+a = b = 25 - 10 - 5;
+console.log(a, b); // 10 10
+//because assignment operator '=' is read right-to-left
