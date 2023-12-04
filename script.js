@@ -1,3 +1,4 @@
+/// PART 1 ///
 // Variable name conventions
 let jonas_schmedtmann = "JM";
 let $Function = 27;
@@ -76,3 +77,31 @@ let a, b;
 a = b = 25 - 10 - 5;
 console.log(a, b); // 10 10
 //because assignment operator '=' is read right-to-left
+
+/// PART 2 ///
+
+const jonasBirth = 1991;
+const jonasIntroduce =
+  "I'm " +
+  firstName +
+  ", a " +
+  (now - jonasBirth) +
+  " years old " +
+  myCurrentJob +
+  "!";
+
+console.log(jonasIntroduce);
+
+// template strings
+// template strings letteral is backticks `...`
+
+const jonasIntroduce2 = `I'm ${firstName}, a ${
+  now - jonasBirth
+} year old ${myCurrentJob}!`;
+
+console.log(jonasIntroduce2);
+
+// Create a string by /multiple lines/
+console.log(`String
+multiple
+lines`);
