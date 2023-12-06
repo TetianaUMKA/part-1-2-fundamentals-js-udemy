@@ -106,7 +106,8 @@ console.log(`String
 multiple
 lines`);
 
-// if statment
+// if statement (if (condition) {} else{}) that condition in parenthesis()returns a true or a false value
+
 const ageMarry = 19;
 const isOldEnough = ageMarry >= 18;
 
@@ -122,3 +123,15 @@ if (ageNika >= 18) {
   const yearsLeft = 18 - ageNika;
   console.log(`Nika is too young. Wait another ${yearsLeft} years 🍭`);
 }
+
+const birthYear = 1991;
+let century;
+if (birthYear <= 2000) {
+  if (birthYear <= 2000) {
+    century = 20;
+  } else {
+    century = 21;
+  }
+}
+
+console.log(century);
