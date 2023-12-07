@@ -135,3 +135,28 @@ if (birthYear <= 2000) {
 }
 
 console.log(century);
+
+// Type coercion // refers to the automatic conversion of data types. For example, if a number and a string are added together, JavaScript will automatically convert the number to a string
+
+const inputYear = "1991";
+console.log(inputYear + 18); // '199118'
+
+console.log("I am" + 23 + "years old"); // 'I am 23 years old' (because operator '+' concatenate to string)
+
+console.log("23" - "10" - 3); // 10 (because '-' convert to number)
+console.log("23" / "2"); // 11.5
+console.log("12" * "2"); // 24
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n); // 10
+
+// Type conversion // is the process of converting data of one type to another by using methods(function)
+const inputYear2 = "1991";
+console.log(Number(inputYear2), inputYear2); // 1991 - number, '1991'
+console.log(Number(inputYear2) + 18); // 2009 - number
+
+console.log(Number("Jonas")); // NaN
+console.log(typeof NaN); // number (but it is invalid number)
+
+console.log(String(23)); // 23 - number;
