@@ -180,3 +180,10 @@ if (money) {
 } else {
   console.log("You should get a job!");
 }
+
+let height;
+if (height) {
+  console.log("Height is defined");
+} else {
+  console.log("Height is UNDEFINED");
+}
