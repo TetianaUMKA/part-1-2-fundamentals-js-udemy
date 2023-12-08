@@ -160,3 +160,23 @@ console.log(Number("Jonas")); // NaN
 console.log(typeof NaN); // number (but it is invalid number)
 
 console.log(String(23)); // 23 - number;
+
+// true or false
+// 5 falsy value: 0, '', undefined, null, NaN
+
+console.log(Boolean(0)); // false
+console.log(Boolean("")); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean(null)); // false
+console.log(Boolean(NaN)); // false
+
+// whereas
+console.log(Boolean("Jonas")); // true
+console.log(Boolean({})); // true
+
+const money = 0;
+if (money) {
+  console.log("Don't spend it all :)");
+} else {
+  console.log("You should get a job!");
+}
