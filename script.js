@@ -220,4 +220,17 @@ if (oneNumber === 100) {
   console.log("Cool! 100 is an amasing number!👍"); // Cool! 100 is an amasing number!👍
 }
 
-if (oneNumber !== 100) console.log("Why not 100?");
+if (oneNumber !== 100) {
+  console.log("Why not 100?");
+}
+
+const anotherNumber = Number(prompt("Write the another number"));
+if (anotherNumber === 50) {
+  console.log("Cool! 50 is an amasing number!👍");
+} else if (anotherNumber === 30) {
+  console.log("Cool! 30 is a good number!👍");
+} else if (anotherNumber === 20) {
+  console.log("Cool! 20 is nod a bad number!👍");
+} else {
+  console.log("What is wrong with you?😁");
+}
