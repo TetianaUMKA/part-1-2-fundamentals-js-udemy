@@ -211,11 +211,13 @@ if (favourite === 150) {
   console.log("Cool! 150 is an amasing number!😅"); // nothing
 }
 
-const oneNumber = Number.prompt("Write one number"); // enter 100
+const oneNumber = Number(prompt("Write one number")); // enter 100
 console.log(oneNumber); // 100
 console.log(typeof oneNumber); // 'number'
 
-if (favourite === 100) {
+if (oneNumber === 100) {
   // 100 === 100 // false
   console.log("Cool! 100 is an amasing number!👍"); // Cool! 100 is an amasing number!👍
 }
+
+if (oneNumber !== 100) console.log("Why not 100?");
