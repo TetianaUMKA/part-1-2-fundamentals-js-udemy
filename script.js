@@ -189,5 +189,33 @@ if (height) {
 }
 
 // Comparison operators: triple equal === is a strict equality operator
+// double equal == is a loose equality operator does perform type coercion
 const ageNext = 18;
-if (ageNext === 18) console.log("You just became an adult");
+if (ageNext === 18) console.log("You just became an adult"); // 'You just became an adult' // because '===' does not perform type coercion // true
+
+if (ageNext == "18") console.log("You just became an adult"); // 'You just became an adult' // because '==' does coercion and gives // true
+
+//Therefore better always use '===' to avoid bugs
+
+const favourite = prompt("What's your favourite number"); // enter 150
+console.log(favourite); // '150'
+console.log(typeof favourite); // 'string'
+
+if (favourite == 150) {
+  // '150' == 150 // true
+  console.log("Cool! 150 is an amasing number!😅"); // Cool! 150 is an amasing number!😅
+}
+
+if (favourite === 150) {
+  // '150' === 150 // false
+  console.log("Cool! 150 is an amasing number!😅"); // nothing
+}
+
+const oneNumber = Number.prompt("Write one number"); // enter 100
+console.log(oneNumber); // 100
+console.log(typeof oneNumber); // 'number'
+
+if (favourite === 100) {
+  // 100 === 100 // false
+  console.log("Cool! 100 is an amasing number!👍"); // Cool! 100 is an amasing number!👍
+}
