@@ -187,3 +187,7 @@ if (height) {
 } else {
   console.log("Height is UNDEFINED");
 }
+
+// Comparison operators: triple equal === is a strict equality operator
+const ageNext = 18;
+if (ageNext === 18) console.log("You just became an adult");
