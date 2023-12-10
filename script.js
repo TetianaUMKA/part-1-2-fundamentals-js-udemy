@@ -196,7 +196,7 @@ if (ageNext === 18) console.log("You just became an adult"); // 'You just became
 if (ageNext == "18") console.log("You just became an adult"); // 'You just became an adult' // because '==' does coercion and gives // true
 
 //Therefore better always use '===' to avoid bugs
-
+/*
 const favourite = prompt("What's your favourite number"); // enter 150
 console.log(favourite); // '150'
 console.log(typeof favourite); // 'string'
@@ -233,4 +233,42 @@ if (anotherNumber === 50) {
   console.log("Cool! 20 is nod a bad number!👍");
 } else {
   console.log("What is wrong with you?😁");
+}
+*/
+
+// Boolean logic: AND, OR, NOT OPERATORS
+
+const hasDriversLicense1 = true;
+const hasGoodVision1 = true;
+console.log(hasDriversLicense1 && hasGoodVision1); //true
+console.log(hasDriversLicense1 || hasGoodVision1); //true
+
+const hasDriversLicense2 = true;
+const hasGoodVision2 = false;
+console.log(hasDriversLicense2 && hasGoodVision2); //false
+console.log(hasDriversLicense2 || hasGoodVision2); //true
+
+console.log(!hasDriversLicense2); //false
+console.log(!hasGoodVision2); //true
+
+const shouldDrive1 = hasDriversLicense1 && hasGoodVision1;
+
+if (shouldDrive1) {
+  console.log("Sarah is able to drive!🚙");
+}
+
+if (hasDriversLicense2 && hasGoodVision2) {
+  console.log("Sarah is able to drive!🚙");
+} else {
+  console.log("Someone else should drive...😅");
+}
+
+const isTired = false;
+console.log(hasDriversLicense1 || hasGoodVision1 || isTired); // true
+console.log(hasDriversLicense1 && hasGoodVision1 && isTired); // false
+
+if (hasDriversLicense1 && hasGoodVision1 && !isTired) {
+  console.log("Sarah is able to drive!✅");
+} else {
+  console.log("Someone else should drive...❌");
 }
