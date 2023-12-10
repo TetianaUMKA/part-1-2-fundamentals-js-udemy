@@ -24,15 +24,15 @@ const scoreKoalas = (107 + 91 + 110) / 3; // 102.66666666666667
 console.log(scoreDolphins, scoreKoalas);
 
 if (scoreDolphins > scoreKoalas && scoreDolphins >= 100) {
-  console.log("Dolphins win the trophy");
+  console.log("Dolphins win the trophy🏆");
 } else if (scoreDolphins < scoreKoalas && scoreKoalas >= 100) {
-  console.log("Koalas win the trophy");
+  console.log("Koalas win the trophy🏆");
 } else if (
   scoreDolphins === scoreKoalas &&
   scoreDolphins >= 100 &&
   scoreKoalas >= 100
 ) {
-  console.log("Both win the trophy");
+  console.log("Both win the trophytrophy🌈");
 } else {
-  console.log("No one wins the trophy");
+  console.log("No one wins the trophytrophy🙈");
 }
