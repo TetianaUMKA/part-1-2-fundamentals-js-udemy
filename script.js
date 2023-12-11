@@ -272,3 +272,38 @@ if (hasDriversLicense1 && hasGoodVision1 && !isTired) {
 } else {
   console.log("Someone else should drive...❌");
 }
+
+// SWITCH statement
+
+const day = "wednesday";
+
+switch (day) {
+  case "monday":
+    console.log("Plan course structure");
+    console.log("Go to coding meeting");
+    break;
+  case "tuesday":
+    console.log("Preapare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples"); // Write code examples
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend :D");
+    break;
+  default:
+    console.log("Not a valid day");
+}
+
+if (day === "monday") {
+} else if (day === "tuesday") {
+} else if (day === "wednesday" || day === "thursday") {
+} else if (day === "friday") {
+} else if (day === "saturday" || day === "sunday") {
+} else {
+}
