@@ -357,3 +357,20 @@ console.log(fruitProcessor(5, 0));
 
 const appleOrangeJuice = fruitProcessor(4, 2);
 console.log(appleOrangeJuice);
+
+console.log(Number("23"));
+
+// Function Declarations vs. Expressions. The difference between these two function is we cannot access before initialization.
+
+// const ageKate = calcAge(1982);
+function calcAge(birthYear) {
+  return 2023 - birthYear;
+}
+const ageKate = calcAge(1982);
+console.log(ageKate);
+
+const calcAge2 = function (birthYear) {
+  return 2023 - birthYear;
+};
+const ageKate2 = calcAge2(1982);
+console.log(ageKate2);
