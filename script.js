@@ -329,3 +329,31 @@ if (userAge >= 18) {
 console.log(drink);
 
 console.log(`I like to drink ${userAge >= 18 ? "wine 🍷" : "water💧"}`);
+
+// We use statement 'use strict' at the beginning of the script to avoid errors. It outputs errors in console when something wrong.
+
+/// PART 2 ///
+
+// Function
+
+function logger() {
+  console.log("My name is Jonas");
+}
+// calling / running / invoking function
+logger();
+logger();
+logger();
+
+function fruitProcessor(apples, oranges) {
+  console.log(apples, oranges);
+  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+  return juice;
+}
+
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+
+console.log(fruitProcessor(5, 0));
+
+const appleOrangeJuice = fruitProcessor(4, 2);
+console.log(appleOrangeJuice);
