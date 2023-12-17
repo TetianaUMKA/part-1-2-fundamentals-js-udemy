@@ -407,3 +407,14 @@ function fruitProcessor2(apples, oranges) {
 
 const juice = fruitProcessor2(6, 7);
 console.log(juice);
+
+function fruitProcessor3(apples, oranges) {
+  const juice = `Juice with ${cutFruitPieces(
+    apples
+  )} pieces of apples and ${cutFruitPieces(oranges)} pieces of oranges.`;
+
+  return juice;
+}
+
+const juice3 = fruitProcessor2(10, 20);
+console.log(juice3);
