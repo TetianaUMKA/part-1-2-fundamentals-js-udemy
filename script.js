@@ -418,3 +418,19 @@ function fruitProcessor3(apples, oranges) {
 
 const juice3 = fruitProcessor2(10, 20);
 console.log(juice3);
+
+// Reviewing functions
+
+const calcUserAge = function (birthYear) {
+  return 2023 - birthYear;
+};
+
+const yearsUntilRetirement2 = function (birthYear, firstName) {
+  const retirement = 65 - calcUserAge(birthYear);
+  return retirement >= 0
+    ? `${firstName} will get retirement when ${retirement} years passed`
+    : `${firstName} already is retired🏖️`;
+};
+
+console.log(yearsUntilRetirement2(1982, "Michiel"));
+console.log(yearsUntilRetirement2(1954, "Bob"));
