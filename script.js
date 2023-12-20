@@ -505,6 +505,6 @@ friendsArr.push(23);
 console.log(friendsArr.includes("23")); // false
 console.log(friendsArr.includes(23)); // true
 
-if (friendsArr.includes("Peter")) {
+if (friendsArr.includes("Viky")) {
   console.log("You have a friend called Viky");
 }
