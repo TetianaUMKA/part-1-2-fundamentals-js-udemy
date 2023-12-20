@@ -495,4 +495,16 @@ console.log(poppedElArr); // 'Kevin'
 friendsArr.shift();
 console.log(friendsArr); // ["Monika", "Viky"]
 
-console.log(friendsArr.indexOf("Viky"));
+console.log(friendsArr.indexOf("Viky")); // 2
+console.log(friendsArr.indexOf("Bob")); // -1
+
+console.log(friendsArr.includes("Viky")); // true
+console.log(friendsArr.includes("Bob")); // false
+
+friendsArr.push(23);
+console.log(friendsArr.includes("23")); // false
+console.log(friendsArr.includes(23)); // true
+
+if (friendsArr.includes("Peter")) {
+  console.log("You have a friend called Viky");
+}
