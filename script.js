@@ -508,3 +508,59 @@ console.log(friendsArr.includes(23)); // true
 if (friendsArr.includes("Viky")) {
   console.log("You have a friend called Viky");
 }
+
+// Objects
+const jonasObject = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
+
+console.log(jonasObject);
+
+console.log(jonasObject.lastName); // 'Schmedtmann'
+console.log(jonasObject["lastName"]); // 'Schmedtmann'
+
+const nameKey = "Name";
+console.log(jonasObject["first" + nameKey]); // 'Jonas'
+console.log(jonasObject["last" + nameKey]); //'Schmedtmann'
+
+// const interestedIn = prompt(
+//   "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends."
+// );
+// const answer = jonasObject[interestedIn];
+// console.log(answer);
+
+// if (jonas[interestedIn]) {
+//   alert(`${answer}`);
+// } else {
+//   alert("Wrong request!");
+// }
+
+// my improvisation
+// const jonasObject = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   age: 2023 - 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+// };
+
+// function searchInfoJonas(interestedIn) {
+//   for (const key of Object.keys(jonasObject)) {
+//     if (key === interestedIn) {
+//       alert(`The answer your question: ${jonasObject[key]}`);
+//     } else {
+//       ("The answer is not found");
+//     }
+//   }
+//   return;
+// }
+
+// searchInfoJonas(
+//   prompt(
+//     "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends."
+//   )
+// );
