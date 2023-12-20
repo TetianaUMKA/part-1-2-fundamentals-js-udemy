@@ -472,3 +472,27 @@ const ages = [
   calcAgeA(yearsArray[yearsArray.length - 1]),
 ];
 console.log(ages);
+
+//Basic array operations (Methods)
+
+const friendsArr = ["Monika", "Viky", "Kevin"];
+
+// Add elements
+const newLengthArr = friendsArr.push("Peter");
+console.log(friendsArr); // ["Monika", "Viky", "Kevin", "Peter"]
+console.log(newLengthArr); // 4
+
+friendsArr.unshift("John");
+console.log(friendsArr); // ["John", "Monika", "Viky", "Kevin", "Peter"]
+
+// Remove elements
+friendsArr.pop(); // remove only last element
+console.log(friendsArr); // ["John", "Monika", "Viky", "Kevin"]
+const poppedElArr = friendsArr.pop();
+console.log(friendsArr); // ["John", "Monika", "Viky"]
+console.log(poppedElArr); // 'Kevin'
+
+friendsArr.shift();
+console.log(friendsArr); // ["Monika", "Viky"]
+
+console.log(friendsArr.indexOf("Viky"));
