@@ -564,3 +564,11 @@ console.log(jonasObject["last" + nameKey]); //'Schmedtmann'
 //     "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends."
 //   )
 // );
+
+jonasObject.location = "Portugal";
+jonasObject["twitter"] = "@jonasschmedtman";
+console.log(jonasObject);
+
+console.log(
+  `${jonasObject.firstName} has ${jonasObject.friends.length} friends, but his best friend is called ${jonasObject.friends[0]}`
+);
