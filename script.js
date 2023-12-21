@@ -572,3 +572,25 @@ console.log(jonasObject);
 console.log(
   `${jonasObject.firstName} has ${jonasObject.friends.length} friends, but his best friend is called ${jonasObject.friends[0]}`
 );
+
+const monika = {
+  firstName: "Monika",
+  lastName: "Brown",
+  birthYear: 1982,
+  job: "manager",
+  friends: ["Peter", "Nika", "Michel"],
+  hasDriversLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2023 - birthYear;
+  // },
+  calcAge: function () {
+    console.log(this);
+    return 2023 - this.birthYear;
+  },
+};
+
+// console.log(monika.calcAge(1982));
+// console.log(monika["calcAge"](1982));
+
+console.log(monika.calcAge());
