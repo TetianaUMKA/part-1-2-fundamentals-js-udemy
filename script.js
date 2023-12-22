@@ -611,3 +611,64 @@ monika.calcAge();
 console.log(monika.year);
 
 console.log(monika.checkLicense());
+
+// Iteration: The for Loop
+
+console.log("Lifting weights repetition 1 🏋🏽‍♂️");
+console.log("Lifting weights repetition 2 🏋🏽‍♂️");
+console.log("Lifting weights repetition 3 🏋🏽‍♂️");
+// etc
+
+// for loop keeps running while conditional true
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋🏽‍♂️`);
+}
+
+const jonasL = [
+  firstName,
+  "Schmedtmann",
+  2023 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < jonasL.length; i++) {
+  console.log(jonasL[i]);
+  if (
+    typeof jonasL[i] !== "string" &&
+    typeof jonasL[i] !== "number" &&
+    typeof jonasL[i] !== "boolean"
+  ) {
+    console.log(typeof jonasL[i]); // object (despite of it is array)
+    console.log(...jonasL[i]);
+  }
+
+  // types[i] = typeof jonasL[i];
+
+  types.push(typeof jonasL[i]);
+}
+console.log(types);
+console.log(jonasL);
+
+// //
+const yearsL = [2010, 1987, 1982, 1971, 1963, 1957, 1937];
+const agesL = [];
+for (let i = 0; i < yearsL.length; i++) {
+  agesL.push(2023 - yearsL[i]);
+}
+console.log(agesL);
+
+// continue and break
+
+for (let i = 0; i < jonasL.length; i++) {
+  if (typeof jonas[i] !== "string") continue; // continue means to skip
+  console.log(jonasL[i], typeof jonasL[i]);
+}
+
+for (let i = 0; i < jonasL.length; i++) {
+  if (typeof jonas[i] === "number") break; // break terminates the loop completely when it finds what it needs
+  console.log(jonasL[i], typeof jonasL[i]);
+}
