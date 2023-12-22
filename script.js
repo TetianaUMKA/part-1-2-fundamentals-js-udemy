@@ -672,3 +672,16 @@ for (let i = 0; i < jonasL.length; i++) {
   if (typeof jonas[i] === "number") break; // break terminates the loop completely when it finds what it needs
   console.log(jonasL[i], typeof jonasL[i]);
 }
+
+//  Looping Backwards and Loops in Loops
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(jonasL[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`---Starting exercise ${exercise}`);
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋🏽`);
+  }
+}
