@@ -685,3 +685,24 @@ for (let exercise = 1; exercise < 4; exercise++) {
     console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋🏽`);
   }
 }
+
+// The While Loop
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋🏽‍♂️`);
+}
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`While: Lifting weights repetition ${rep} 🏋🏽‍♂️`);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// let dice = Number((Math.random() * 10).toFixed(0));
+console.log(dice);
+while (dice !== 6) {
+  console.log(`Your rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end ...");
+}
