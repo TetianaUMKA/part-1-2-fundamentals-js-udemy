@@ -573,6 +573,8 @@ console.log(
   `${jonasObject.firstName} has ${jonasObject.friends.length} friends, but his best friend is called ${jonasObject.friends[0]}`
 );
 
+// Object methods
+
 const monika = {
   firstName: "Monika",
   lastName: "Brown",
@@ -584,13 +586,28 @@ const monika = {
   // calcAge: function (birthYear) {
   //   return 2023 - birthYear;
   // },
+  // calcAge: function () {
+  //   console.log(this);
+  //   return 2023 - this.birthYear;
+  // },
   calcAge: function () {
     console.log(this);
-    return 2023 - this.birthYear;
+    this.year = 2023 - this.birthYear;
+    return this.year;
+  },
+  checkLicense: function () {
+    return `${this.firstName} is ${this.calcAge()} years old ${
+      this.job
+    } and has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
   },
 };
 
 // console.log(monika.calcAge(1982));
 // console.log(monika["calcAge"](1982));
 
-console.log(monika.calcAge());
+// console.log(monika.calcAge());
+
+monika.calcAge();
+console.log(monika.year);
+
+console.log(monika.checkLicense());
