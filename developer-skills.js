@@ -9,7 +9,7 @@ console.log();
 // 4. Install TODO Highlight and configure it in settings ->settings.json FIXME
 
 // 5. Problem-solving
-/// first solving
+/// first solving - use function to different arrays
 const temperatures = [3, -2, -6, 'error', 9, 13, 17, 15, 14, 9, 5];
 const temperatures2 = [-7, -3, 6, 'error', -1, 0, 5, 'error', 7, 12, 8];
 
@@ -37,7 +37,7 @@ let amplitudemCurrentMonth;
 amplitudemCurrentMonth = determineHighestLowest(temperatures);
 amplitudemCurrentMonth = determineHighestLowest(temperatures2);
 
-/// second solving
+/// second solving - use function to different arrays
 const calcTempAmplitude = function (temps) {
   let min = temps[0];
   let max = temps[0];
@@ -61,7 +61,7 @@ let amplitudemCurrentMonth2;
 amplitudemCurrentMonth2 = determineHighestLowest(temperatures);
 amplitudemCurrentMonth2 = determineHighestLowest(temperatures2);
 
-/// third solving
+/// third solving - put two arrays together into function
 function determineHighestLowest2(arr1, arr2) {
   const arr = arr1.concat(arr2);
   console.log(arr);
@@ -70,9 +70,7 @@ function determineHighestLowest2(arr1, arr2) {
   let cleanedArr = [];
 
   for (const value of arr) {
-    if (typeof value !== 'number') {
-      continue;
-    }
+    if (typeof value !== 'number') continue;
     cleanedArr.push(value);
   }
   console.log(cleanedArr);
