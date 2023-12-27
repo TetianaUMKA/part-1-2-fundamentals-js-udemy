@@ -89,6 +89,7 @@ console.log(amplitudeTwoArr);
    console.error();
    console.table(); for looking deeply
 2) by testing a needed code in the dev-tool debugger (sources -> needed script -> needed breakpoint)
+3) we can write in our script 'debugger;' and this will direct us to the breakpoint where we made it
 */
 const measureKelvin = function () {
   const measurement = {
