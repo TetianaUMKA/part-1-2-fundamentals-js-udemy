@@ -6,9 +6,10 @@
 //cl
 console.log();
 
-// 4. Install TODO Highlight and configure it in settings ->settings.json FIXME
+// 4. Install TODO Highlight and configure it in settings ->settings.json FIND FIX
 
 // 5. Problem-solving
+
 /// first solving - use function to different arrays
 const temperatures = [3, -2, -6, 'error', 9, 13, 17, 15, 14, 9, 5];
 const temperatures2 = [-7, -3, 6, 'error', -1, 0, 5, 'error', 7, 12, 8];
@@ -81,3 +82,22 @@ function determineHighestLowest2(arr1, arr2) {
 }
 const amplitudeTwoArr = determineHighestLowest2(temperatures, temperatures2);
 console.log(amplitudeTwoArr);
+
+// Debugging
+/* We can use: 
+1) console.warm();
+   console.error();
+   console.table(); for looking deeply
+2) by testing a needed code in the dev-tool debugger (sources -> needed script -> needed breakpoint)
+*/
+const measureKelvin = function () {
+  const measurement = {
+    type: 'temp',
+    unit: 'celsius',
+    // value: Number(prompt('Degress celsius:')), // FIND AND FIX (added Number because I need to return typeof 'number')
+    value: 5,
+  };
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+console.log(measureKelvin());
