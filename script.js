@@ -1,13 +1,13 @@
 /// PART 1 ///
 // Variable name conventions
-let jonas_schmedtmann = "JM";
+let jonas_schmedtmann = 'JM';
 let $Function = 27;
 
-let person = "jonas";
+let person = 'jonas';
 let PI = 3.1415;
 
-let myFirstJob = "Coder";
-let myCurrentJob = "Teacher";
+let myFirstJob = 'Coder';
+let myCurrentJob = 'Teacher';
 
 /* The 7 primitive data types
 1. Number         let age = 23;               used for decimals and integers
@@ -24,7 +24,7 @@ console.log(javaScript);
 
 console.log(typeof javaScript); // boolean
 console.log(typeof 23); // number
-console.log(typeof "Jonas"); // string
+console.log(typeof 'Jonas'); // string
 console.log(typeof undefined); // undefined
 console.log(typeof null); // object //it is the bug of JS
 console.log(typeof BigInt); // function
@@ -44,9 +44,9 @@ console.log(ageJonas, ageSarah); // 32 23
 console.log(ageJonas * 2, ageJonas / 10, 2 ** 3); // 64 2.3 8
 // 2**3 means 2 to the power of 3 equals 2*2*2
 
-const firstName = "Jonas";
-const lastName = "Schmedtmann";
-console.log(firstName + " " + lastName); // Jonas Schmedtmann // doing concatenation
+const firstName = 'Jonas';
+const lastName = 'Schmedtmann';
+console.log(firstName + ' ' + lastName); // Jonas Schmedtmann // doing concatenation
 
 // Assignment operator '='
 
@@ -84,11 +84,11 @@ const jonasBirth = 1991;
 const jonasIntroduce =
   "I'm " +
   firstName +
-  ", a " +
+  ', a ' +
   (now - jonasBirth) +
-  " years old " +
+  ' years old ' +
   myCurrentJob +
-  "!";
+  '!';
 
 console.log(jonasIntroduce);
 
@@ -112,13 +112,13 @@ const ageMarry = 19;
 const isOldEnough = ageMarry >= 18;
 
 if (isOldEnough) {
-  console.log("Marry can start driving license 🚘");
+  console.log('Marry can start driving license 🚘');
 }
 
 const ageNika = 15;
 
 if (ageNika >= 18) {
-  console.log("Nika can start driving license 🚘");
+  console.log('Nika can start driving license 🚘');
 } else {
   const yearsLeft = 18 - ageNika;
   console.log(`Nika is too young. Wait another ${yearsLeft} years 🍭`);
@@ -138,25 +138,25 @@ console.log(century);
 
 // Type coercion // refers to the automatic conversion of data types. For example, if a number and a string are added together, JavaScript will automatically convert the number to a string
 
-const inputYear = "1991";
+const inputYear = '1991';
 console.log(inputYear + 18); // '199118'
 
-console.log("I am" + 23 + "years old"); // 'I am 23 years old' (because operator '+' concatenate to string)
+console.log('I am' + 23 + 'years old'); // 'I am 23 years old' (because operator '+' concatenate to string)
 
-console.log("23" - "10" - 3); // 10 (because '-' convert to number)
-console.log("23" / "2"); // 11.5
-console.log("12" * "2"); // 24
+console.log('23' - '10' - 3); // 10 (because '-' convert to number)
+console.log('23' / '2'); // 11.5
+console.log('12' * '2'); // 24
 
-let n = "1" + 1;
+let n = '1' + 1;
 n = n - 1;
 console.log(n); // 10
 
 // Type conversion // is the process of converting data of one type to another by using methods(function)
-const inputYear2 = "1991";
+const inputYear2 = '1991';
 console.log(Number(inputYear2), inputYear2); // 1991 - number, '1991'
 console.log(Number(inputYear2) + 18); // 2009 - number
 
-console.log(Number("Jonas")); // NaN
+console.log(Number('Jonas')); // NaN
 console.log(typeof NaN); // number (but it is invalid number)
 
 console.log(String(23)); // 23 - number;
@@ -165,35 +165,35 @@ console.log(String(23)); // 23 - number;
 // 5 falsy value: 0, '', undefined, null, NaN
 
 console.log(Boolean(0)); // false
-console.log(Boolean("")); // false
+console.log(Boolean('')); // false
 console.log(Boolean(undefined)); // false
 console.log(Boolean(null)); // false
 console.log(Boolean(NaN)); // false
 
 // whereas
-console.log(Boolean("Jonas")); // true
+console.log(Boolean('Jonas')); // true
 console.log(Boolean({})); // true
 
 const money = 0;
 if (money) {
   console.log("Don't spend it all :)");
 } else {
-  console.log("You should get a job!");
+  console.log('You should get a job!');
 }
 
 let height;
 if (height) {
-  console.log("Height is defined");
+  console.log('Height is defined');
 } else {
-  console.log("Height is UNDEFINED");
+  console.log('Height is UNDEFINED');
 }
 
 // Comparison operators: triple equal === is a strict equality operator
 // double equal == is a loose equality operator does perform type coercion
 const ageNext = 18;
-if (ageNext === 18) console.log("You just became an adult"); // 'You just became an adult' // because '===' does not perform type coercion // true
+if (ageNext === 18) console.log('You just became an adult'); // 'You just became an adult' // because '===' does not perform type coercion // true
 
-if (ageNext == "18") console.log("You just became an adult"); // 'You just became an adult' // because '==' does coercion and gives // true
+if (ageNext == '18') console.log('You just became an adult'); // 'You just became an adult' // because '==' does coercion and gives // true
 
 //Therefore better always use '===' to avoid bugs
 /*
@@ -254,13 +254,13 @@ console.log(!hasGoodVision2); //true
 const shouldDrive1 = hasDriversLicense1 && hasGoodVision1;
 
 if (shouldDrive1) {
-  console.log("Sarah is able to drive!🚙");
+  console.log('Sarah is able to drive!🚙');
 }
 
 if (hasDriversLicense2 && hasGoodVision2) {
-  console.log("Sarah is able to drive!🚙");
+  console.log('Sarah is able to drive!🚙');
 } else {
-  console.log("Someone else should drive...😅");
+  console.log('Someone else should drive...😅');
 }
 
 const isTired = false;
@@ -268,43 +268,43 @@ console.log(hasDriversLicense1 || hasGoodVision1 || isTired); // true
 console.log(hasDriversLicense1 && hasGoodVision1 && isTired); // false
 
 if (hasDriversLicense1 && hasGoodVision1 && !isTired) {
-  console.log("Sarah is able to drive!✅");
+  console.log('Sarah is able to drive!✅');
 } else {
-  console.log("Someone else should drive...❌");
+  console.log('Someone else should drive...❌');
 }
 
 // SWITCH statement
 
-const day = "wednesday";
+const day = 'wednesday';
 
 switch (day) {
-  case "monday":
-    console.log("Plan course structure");
-    console.log("Go to coding meeting");
+  case 'monday':
+    console.log('Plan course structure');
+    console.log('Go to coding meeting');
     break;
-  case "tuesday":
-    console.log("Preapare theory videos");
+  case 'tuesday':
+    console.log('Preapare theory videos');
     break;
-  case "wednesday":
-  case "thursday":
-    console.log("Write code examples"); // Write code examples
+  case 'wednesday':
+  case 'thursday':
+    console.log('Write code examples'); // Write code examples
     break;
-  case "friday":
-    console.log("Record videos");
+  case 'friday':
+    console.log('Record videos');
     break;
-  case "saturday":
-  case "sunday":
-    console.log("Enjoy the weekend :D");
+  case 'saturday':
+  case 'sunday':
+    console.log('Enjoy the weekend :D');
     break;
   default:
-    console.log("Not a valid day");
+    console.log('Not a valid day');
 }
 
-if (day === "monday") {
-} else if (day === "tuesday") {
-} else if (day === "wednesday" || day === "thursday") {
-} else if (day === "friday") {
-} else if (day === "saturday" || day === "sunday") {
+if (day === 'monday') {
+} else if (day === 'tuesday') {
+} else if (day === 'wednesday' || day === 'thursday') {
+} else if (day === 'friday') {
+} else if (day === 'saturday' || day === 'sunday') {
 } else {
 }
 
@@ -312,23 +312,23 @@ if (day === "monday") {
 
 const userAge = 17;
 userAge >= 18
-  ? console.log("I like to drink wine 🍷")
-  : console.log("I like to drink water💧");
+  ? console.log('I like to drink wine 🍷')
+  : console.log('I like to drink water💧');
 
-const preferredDrink = userAge >= 18 ? "wine 🍷" : "water💧";
+const preferredDrink = userAge >= 18 ? 'wine 🍷' : 'water💧';
 console.log(preferredDrink);
 
 let drink;
 
 if (userAge >= 18) {
-  drink = "wine 🍷";
+  drink = 'wine 🍷';
 } else {
-  drink = "water💧";
+  drink = 'water💧';
 }
 
 console.log(drink);
 
-console.log(`I like to drink ${userAge >= 18 ? "wine 🍷" : "water💧"}`);
+console.log(`I like to drink ${userAge >= 18 ? 'wine 🍷' : 'water💧'}`);
 
 // We use statement 'use strict' at the beginning of the script to avoid errors. It outputs errors in console when something wrong.
 
@@ -337,7 +337,7 @@ console.log(`I like to drink ${userAge >= 18 ? "wine 🍷" : "water💧"}`);
 // Function
 
 function logger() {
-  console.log("My name is Jonas");
+  console.log('My name is Jonas');
 }
 // calling / running / invoking function
 logger();
@@ -358,7 +358,7 @@ console.log(fruitProcessor(5, 0));
 const appleOrangeJuice = fruitProcessor(4, 2);
 console.log(appleOrangeJuice);
 
-console.log(Number("23"));
+console.log(Number('23'));
 
 // Function Declarations vs. Expressions. The difference between these two function is we cannot access before initialization.
 
@@ -377,7 +377,7 @@ console.log(ageKate2);
 
 // Arrow function
 
-const calcAge3 = (birthYear) => 2023 - birthYear;
+const calcAge3 = birthYear => 2023 - birthYear;
 const age3 = calcAge3(1971);
 console.log(age3);
 
@@ -387,8 +387,8 @@ const yearsUntilRetirement = (birthYear, firstName) => {
   return `${firstName} will get retirement when ${retirement} years passed`;
 };
 
-console.log(yearsUntilRetirement(1982, "Kate"));
-console.log(yearsUntilRetirement(1971, "Luisa"));
+console.log(yearsUntilRetirement(1982, 'Kate'));
+console.log(yearsUntilRetirement(1971, 'Luisa'));
 
 // Functions calling other functions
 
@@ -432,12 +432,12 @@ const yearsUntilRetirement2 = function (birthYear, firstName) {
     : `${firstName} already is retired🏖️`;
 };
 
-console.log(yearsUntilRetirement2(1982, "Michiel"));
-console.log(yearsUntilRetirement2(1954, "Bob"));
+console.log(yearsUntilRetirement2(1982, 'Michiel'));
+console.log(yearsUntilRetirement2(1954, 'Bob'));
 
 // Arrays
 
-const friends = ["Michel", "Steven", "Peter"];
+const friends = ['Michel', 'Steven', 'Peter'];
 console.log(friends);
 
 const yearsA = new Array(1991, 1984, 2008, 2020);
@@ -448,11 +448,11 @@ console.log(friends[2]);
 console.log(friends.length);
 console.log(friends[friends.length - 1]);
 
-friends[2] = "Jay";
+friends[2] = 'Jay';
 console.log(friends);
 
-const firstNameA = "Jonas";
-const jonas = [firstName, "Schmedtmann", 2023 - 1991, "teacher", friends];
+const firstNameA = 'Jonas';
+const jonas = [firstName, 'Schmedtmann', 2023 - 1991, 'teacher', friends];
 console.log(jonas);
 console.log(jonas.length);
 
@@ -475,14 +475,14 @@ console.log(ages);
 
 //Basic array operations (Methods)
 
-const friendsArr = ["Monika", "Viky", "Kevin"];
+const friendsArr = ['Monika', 'Viky', 'Kevin'];
 
 // Add elements
-const newLengthArr = friendsArr.push("Peter");
+const newLengthArr = friendsArr.push('Peter');
 console.log(friendsArr); // ["Monika", "Viky", "Kevin", "Peter"]
 console.log(newLengthArr); // 4
 
-friendsArr.unshift("John");
+friendsArr.unshift('John');
 console.log(friendsArr); // ["John", "Monika", "Viky", "Kevin", "Peter"]
 
 // Remove elements
@@ -495,37 +495,37 @@ console.log(poppedElArr); // 'Kevin'
 friendsArr.shift();
 console.log(friendsArr); // ["Monika", "Viky"]
 
-console.log(friendsArr.indexOf("Viky")); // 2
-console.log(friendsArr.indexOf("Bob")); // -1
+console.log(friendsArr.indexOf('Viky')); // 2
+console.log(friendsArr.indexOf('Bob')); // -1
 
-console.log(friendsArr.includes("Viky")); // true
-console.log(friendsArr.includes("Bob")); // false
+console.log(friendsArr.includes('Viky')); // true
+console.log(friendsArr.includes('Bob')); // false
 
 friendsArr.push(23);
-console.log(friendsArr.includes("23")); // false
+console.log(friendsArr.includes('23')); // false
 console.log(friendsArr.includes(23)); // true
 
-if (friendsArr.includes("Viky")) {
-  console.log("You have a friend called Viky");
+if (friendsArr.includes('Viky')) {
+  console.log('You have a friend called Viky');
 }
 
 // Objects
 const jonasObject = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
   age: 2037 - 1991,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
 };
 
 console.log(jonasObject);
 
 console.log(jonasObject.lastName); // 'Schmedtmann'
-console.log(jonasObject["lastName"]); // 'Schmedtmann'
+console.log(jonasObject['lastName']); // 'Schmedtmann'
 
-const nameKey = "Name";
-console.log(jonasObject["first" + nameKey]); // 'Jonas'
-console.log(jonasObject["last" + nameKey]); //'Schmedtmann'
+const nameKey = 'Name';
+console.log(jonasObject['first' + nameKey]); // 'Jonas'
+console.log(jonasObject['last' + nameKey]); //'Schmedtmann'
 
 // const interestedIn = prompt(
 //   "What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends."
@@ -565,8 +565,8 @@ console.log(jonasObject["last" + nameKey]); //'Schmedtmann'
 //   )
 // );
 
-jonasObject.location = "Portugal";
-jonasObject["twitter"] = "@jonasschmedtman";
+jonasObject.location = 'Portugal';
+jonasObject['twitter'] = '@jonasschmedtman';
 console.log(jonasObject);
 
 console.log(
@@ -576,11 +576,11 @@ console.log(
 // Object methods
 
 const monika = {
-  firstName: "Monika",
-  lastName: "Brown",
+  firstName: 'Monika',
+  lastName: 'Brown',
   birthYear: 1982,
-  job: "manager",
-  friends: ["Peter", "Nika", "Michel"],
+  job: 'manager',
+  friends: ['Peter', 'Nika', 'Michel'],
   hasDriversLicense: true,
 
   // calcAge: function (birthYear) {
@@ -598,7 +598,7 @@ const monika = {
   checkLicense: function () {
     return `${this.firstName} is ${this.calcAge()} years old ${
       this.job
-    } and has ${this.hasDriversLicense ? "a" : "no"} driver's license`;
+    } and has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`;
   },
 };
 
@@ -614,9 +614,9 @@ console.log(monika.checkLicense());
 
 // Iteration: The for Loop
 
-console.log("Lifting weights repetition 1 🏋🏽‍♂️");
-console.log("Lifting weights repetition 2 🏋🏽‍♂️");
-console.log("Lifting weights repetition 3 🏋🏽‍♂️");
+console.log('Lifting weights repetition 1 🏋🏽‍♂️');
+console.log('Lifting weights repetition 2 🏋🏽‍♂️');
+console.log('Lifting weights repetition 3 🏋🏽‍♂️');
 // etc
 
 // for loop keeps running while conditional true
@@ -626,10 +626,10 @@ for (let rep = 1; rep <= 10; rep++) {
 
 const jonasL = [
   firstName,
-  "Schmedtmann",
+  'Schmedtmann',
   2023 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
   true,
 ];
 
@@ -638,9 +638,9 @@ const types = [];
 for (let i = 0; i < jonasL.length; i++) {
   console.log(jonasL[i]);
   if (
-    typeof jonasL[i] !== "string" &&
-    typeof jonasL[i] !== "number" &&
-    typeof jonasL[i] !== "boolean"
+    typeof jonasL[i] !== 'string' &&
+    typeof jonasL[i] !== 'number' &&
+    typeof jonasL[i] !== 'boolean'
   ) {
     console.log(typeof jonasL[i]); // object (despite of it is array)
     console.log(...jonasL[i]);
@@ -664,12 +664,12 @@ console.log(agesL);
 // continue and break
 
 for (let i = 0; i < jonasL.length; i++) {
-  if (typeof jonas[i] !== "string") continue; // continue means to skip
+  if (typeof jonas[i] !== 'string') continue; // continue means to skip
   console.log(jonasL[i], typeof jonasL[i]);
 }
 
 for (let i = 0; i < jonasL.length; i++) {
-  if (typeof jonas[i] === "number") break; // break terminates the loop completely when it finds what it needs
+  if (typeof jonas[i] === 'number') break; // break terminates the loop completely when it finds what it needs
   console.log(jonasL[i], typeof jonasL[i]);
 }
 
@@ -704,5 +704,5 @@ console.log(dice);
 while (dice !== 6) {
   console.log(`Your rolled a ${dice}`);
   dice = Math.trunc(Math.random() * 6) + 1;
-  if (dice === 6) console.log("Loop is about to end ...");
+  if (dice === 6) console.log('Loop is about to end ...');
 }
