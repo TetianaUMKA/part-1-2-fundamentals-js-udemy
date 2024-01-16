@@ -13,10 +13,10 @@ let myCurrentJob = 'Teacher';
 1. Number         let age = 23;               used for decimals and integers
 2. String         let first Name = 'Jonas';   sequence of characters
 3. Boolean        let fullAge = true;         logical type (false and true)
-4. Undefined      let children;    the value taken by the variable that is not defind('emty value')
-// 5. Null: Also means 'emty value', but not the same
+4. Undefined      let children;    the value taken by the variable that is not defined('empty value')
+// 5. Null: Also means 'empty value', but not the same
 5. Symbol(ES2015): value that is unique and cannot be changed (Not useful for now)
-6. Biglnt(ES2020): Larger integers than the Number type can hold
+6. BigInt(ES2020): Larger integers than the Number type can hold
 */
 
 let javaScript = true;
@@ -35,7 +35,7 @@ console.log(typeof BigInt); // function
 /var/
 */
 
-// Mathematic or arihtmetic operators
+// Mathematic or arithmetic operators
 const now = 2023;
 const ageJonas = now - 1991;
 const ageSarah = now - 2000;
@@ -93,7 +93,7 @@ const jonasIntroduce =
 console.log(jonasIntroduce);
 
 // template strings
-// template strings letteral is backticks `...`
+// template strings literal is backticks `...`
 
 const jonasIntroduce2 = `I'm ${firstName}, a ${
   now - jonasBirth
@@ -141,7 +141,7 @@ console.log(century);
 const inputYear = '1991';
 console.log(inputYear + 18); // '199118'
 
-console.log('I am' + 23 + 'years old'); // 'I am 23 years old' (because operator '+' concatenate to string)
+console.log('I am ' + 23 + ' years old'); // 'I am 23 years old' (because operator '+' concatenate to string)
 
 console.log('23' - '10' - 3); // 10 (because '-' convert to number)
 console.log('23' / '2'); // 11.5
@@ -197,18 +197,18 @@ if (ageNext == '18') console.log('You just became an adult'); // 'You just becam
 
 //Therefore better always use '===' to avoid bugs
 /*
-const favourite = prompt("What's your favourite number"); // enter 150
-console.log(favourite); // '150'
-console.log(typeof favourite); // 'string'
+const favorite = prompt("What's your favorite number"); // enter 150
+console.log(favorite); // '150'
+console.log(typeof favorite); // 'string'
 
-if (favourite == 150) {
+if (favorite == 150) {
   // '150' == 150 // true
-  console.log("Cool! 150 is an amasing number!😅"); // Cool! 150 is an amasing number!😅
+  console.log("Cool! 150 is an amassing number!😅"); // Cool! 150 is an amassing number!😅
 }
 
-if (favourite === 150) {
+if (favorite === 150) {
   // '150' === 150 // false
-  console.log("Cool! 150 is an amasing number!😅"); // nothing
+  console.log("Cool! 150 is an amassing number!😅"); // nothing
 }
 
 const oneNumber = Number(prompt("Write one number")); // enter 100
@@ -217,7 +217,7 @@ console.log(typeof oneNumber); // 'number'
 
 if (oneNumber === 100) {
   // 100 === 100 // false
-  console.log("Cool! 100 is an amasing number!👍"); // Cool! 100 is an amasing number!👍
+  console.log("Cool! 100 is an amassing number!👍"); // Cool! 100 is an amassing number!👍
 }
 
 if (oneNumber !== 100) {
@@ -226,7 +226,7 @@ if (oneNumber !== 100) {
 
 const anotherNumber = Number(prompt("Write the another number"));
 if (anotherNumber === 50) {
-  console.log("Cool! 50 is an amasing number!👍");
+  console.log("Cool! 50 is an amassing number!👍");
 } else if (anotherNumber === 30) {
   console.log("Cool! 30 is a good number!👍");
 } else if (anotherNumber === 20) {
@@ -475,38 +475,38 @@ console.log(ages);
 
 //Basic array operations (Methods)
 
-const friendsArr = ['Monika', 'Viky', 'Kevin'];
+const friendsArr = ['Monica', 'Vicky', 'Kevin'];
 
 // Add elements
 const newLengthArr = friendsArr.push('Peter');
-console.log(friendsArr); // ["Monika", "Viky", "Kevin", "Peter"]
+console.log(friendsArr); // ["Monica", "Vicky", "Kevin", "Peter"]
 console.log(newLengthArr); // 4
 
 friendsArr.unshift('John');
-console.log(friendsArr); // ["John", "Monika", "Viky", "Kevin", "Peter"]
+console.log(friendsArr); // ["John", "Monica", "Vicky", "Kevin", "Peter"]
 
 // Remove elements
 friendsArr.pop(); // remove only last element
-console.log(friendsArr); // ["John", "Monika", "Viky", "Kevin"]
+console.log(friendsArr); // ["John", "Monica", "Vicky", "Kevin"]
 const poppedElArr = friendsArr.pop();
-console.log(friendsArr); // ["John", "Monika", "Viky"]
+console.log(friendsArr); // ["John", "Monica", "Vicky"]
 console.log(poppedElArr); // 'Kevin'
 
 friendsArr.shift();
-console.log(friendsArr); // ["Monika", "Viky"]
+console.log(friendsArr); // ["Monica", "Vicky"]
 
-console.log(friendsArr.indexOf('Viky')); // 2
+console.log(friendsArr.indexOf('Vicky')); // 2
 console.log(friendsArr.indexOf('Bob')); // -1
 
-console.log(friendsArr.includes('Viky')); // true
+console.log(friendsArr.includes('Vicky')); // true
 console.log(friendsArr.includes('Bob')); // false
 
 friendsArr.push(23);
 console.log(friendsArr.includes('23')); // false
 console.log(friendsArr.includes(23)); // true
 
-if (friendsArr.includes('Viky')) {
-  console.log('You have a friend called Viky');
+if (friendsArr.includes('Vicky')) {
+  console.log('You have a friend called Vicky');
 }
 
 // Objects
@@ -575,8 +575,8 @@ console.log(
 
 // Object methods
 
-const monika = {
-  firstName: 'Monika',
+const monica = {
+  firstName: 'Monica',
   lastName: 'Brown',
   birthYear: 1982,
   job: 'manager',
@@ -602,15 +602,15 @@ const monika = {
   },
 };
 
-// console.log(monika.calcAge(1982));
-// console.log(monika["calcAge"](1982));
+// console.log(monica.calcAge(1982));
+// console.log(monica["calcAge"](1982));
 
-// console.log(monika.calcAge());
+// console.log(monica.calcAge());
 
-monika.calcAge();
-console.log(monika.year);
+monica.calcAge();
+console.log(monica.year);
 
-console.log(monika.checkLicense());
+console.log(monica.checkLicense());
 
 // Iteration: The for Loop
 
