@@ -115,13 +115,13 @@ if (isOldEnough) {
   console.log('Marry can start driving license 🚘');
 }
 
-const ageNika = 15;
+const ageNina = 15;
 
-if (ageNika >= 18) {
+if (ageNina >= 18) {
   console.log('Nika can start driving license 🚘');
 } else {
-  const yearsLeft = 18 - ageNika;
-  console.log(`Nika is too young. Wait another ${yearsLeft} years 🍭`);
+  const yearsLeft = 18 - ageNina;
+  console.log(`Nina is too young. Wait another ${yearsLeft} years 🍭`);
 }
 
 const birthYear = 1991;
@@ -283,7 +283,7 @@ switch (day) {
     console.log('Go to coding meeting');
     break;
   case 'tuesday':
-    console.log('Preapare theory videos');
+    console.log('Prepare theory videos');
     break;
   case 'wednesday':
   case 'thursday':
@@ -432,12 +432,12 @@ const yearsUntilRetirement2 = function (birthYear, firstName) {
     : `${firstName} already is retired🏖️`;
 };
 
-console.log(yearsUntilRetirement2(1982, 'Michiel'));
+console.log(yearsUntilRetirement2(1982, 'Michael'));
 console.log(yearsUntilRetirement2(1954, 'Bob'));
 
 // Arrays
 
-const friends = ['Michel', 'Steven', 'Peter'];
+const friends = ['Michael', 'Steven', 'Peter'];
 console.log(friends);
 
 const yearsA = new Array(1991, 1984, 2008, 2020);
@@ -464,9 +464,9 @@ const calcAgeA = function (birthYear) {
 const yearsArray = [1990, 1967, 2002, 1991, 2009];
 
 console.log(calcAgeA(yearsArray[3]));
-const ageSimona = calcAgeA(yearsArray[0]);
+const ageSimone = calcAgeA(yearsArray[0]);
 const agePeter = calcAgeA(yearsArray[yearsArray.length - 1]);
-console.log(ageSimona, agePeter);
+console.log(ageSimone, agePeter);
 const ages = [
   calcAgeA(yearsArray[0]),
   calcAgeA(yearsArray[yearsArray.length - 1]),
@@ -580,7 +580,7 @@ const monica = {
   lastName: 'Brown',
   birthYear: 1982,
   job: 'manager',
-  friends: ['Peter', 'Nika', 'Michel'],
+  friends: ['Peter', 'Nina', 'Michel'],
   hasDriversLicense: true,
 
   // calcAge: function (birthYear) {
@@ -611,6 +611,21 @@ monica.calcAge();
 console.log(monica.year);
 
 console.log(monica.checkLicense());
+
+// Copying objects, but only shallow coping. Now this old way isn't used, because if object has deep attachment like array or object we may change them.
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+
+const jessicaCopy = Object.assign({}, jessica);
+
+console.log(jessicaCopy);
+
+jessicaCopy.age = 28;
+console.log(jessica);
+console.log(jessicaCopy);
 
 // Iteration: The for Loop
 
