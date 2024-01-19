@@ -111,7 +111,7 @@ addExpr(2, 5);
 addExpr(2, 5, 8, 12);
 
 const addArrow = (a, b) => {
-  console.log(arguments); // Error: arguments is not defined
+  // console.log(arguments); // Error: arguments is not defined
   return a + b;
 };
 addArrow(2, 5, 8);
