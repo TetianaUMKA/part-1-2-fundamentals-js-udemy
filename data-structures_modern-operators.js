@@ -51,7 +51,8 @@ restaurant.orderDelivery2({
   starterIndex: 2,
 });
 
-// Destructuring objects
+// Destructuring objects //
+
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
@@ -83,7 +84,8 @@ const {
 } = openingHours;
 console.log(o, c);
 
-// Destructuring arrays
+// Destructuring arrays //
+
 const [first, second] = restaurant.categories;
 console.log(first, second); // Italian Pizzeria
 
@@ -128,3 +130,55 @@ const [
 ] = arr;
 
 console.log(firstDefault, secondDefault, thirdDefault, fourthDefault); // 10 20 1 1
+
+// Spread //
+
+const arrExample = [7, 8];
+const badNewArr = [1, 2, arrExample[0], arrExample[1], arrExample[2]];
+console.log(badNewArr); // [1, 2, 7, 8, undefined]
+
+const newArr = [1, 2, ...arrExample];
+console.log(newArr); // [1, 2, 7, 8]
+
+console.log(...newArr); // 1, 2, 7, 8
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+console.log(newMenu); // ['Pizza', 'Pasta', 'Risotto', 'Gnocchi']
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy); // ['Pizza', 'Pasta', 'Risotto']
+
+// Join 2 arrays
+const unitedMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(unitedMenu);
+
+// Spread is used for all iterables.
+// Iterables: arrays, strings, maps, sets. NO objects.
+
+const text = 'We also can use spread';
+
+const textArr = [...text];
+console.log(textArr); // ['W', 'e', ' ', 'a', 'l', 's', 'o', ' ', 'c', 'a', 'n', ' ', 'u', 's', 'e', ' ', 's', 'p', 'r', 'e', 'a', 'd']
+const textArr5 = text.split('');
+console.log(textArr5); // ['W', 'e', ' ', 'a', 'l', 's', 'o', ' ', 'c', 'a', 'n', ' ', 'u', 's', 'e', ' ', 's', 'p', 'r', 'e', 'a', 'd']
+
+const textArr2 = { ...text };
+console.log(textArr2); // {0: 'W', 1: 'e', 2: ' ', 3: 'a', 4: 'l', 5: 's', 6: 'o', 7: ' ', 8: 'c', 9: 'a', 10: 'n', 11: ' ', 12: 'u', 13: 's', 14: 'e', 15: ' ', 16: 's', 17: 'p', 18: 'r', 19: 'e', 20: 'a', 21: 'd'}
+
+const textArr3 = text.split(',');
+console.log(textArr3); // ['We also can use spread']
+
+const textArr4 = text.split(' ');
+console.log(textArr4); // ['We', 'also', 'can', 'use', 'spread']
+
+console.log(text); // 'We also can use spread'
+
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters); // ['J', 'o', 'n', 'a', 's', ' ', 'S.'];
+const joinedLetters = letters.join('');
+console.log(joinedLetters); // 'Jonas S.'
+
+// we can put spread string into function
+console.log(...str); // 'J o n a s'
