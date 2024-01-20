@@ -212,4 +212,11 @@ restaurantCopy.name = 'Restaurant Roma';
 console.log(restaurantCopy);
 console.log(restaurant);
 
-// REST //
+// SPREAD, because on RIGHT side of assignment operator (=)
+
+const arrSpread = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of assignment operator (=)
+
+const [s, d, ...others] = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(s, d, others);
