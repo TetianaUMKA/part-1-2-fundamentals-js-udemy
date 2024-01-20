@@ -137,7 +137,7 @@ const [
 
 console.log(firstDefault, secondDefault, thirdDefault, fourthDefault); // 10 20 1 1
 
-// Spread //
+// SPREAD //
 
 const arrExample = [7, 8];
 const badNewArr = [1, 2, arrExample[0], arrExample[1], arrExample[2]];
@@ -211,3 +211,5 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Restaurant Roma';
 console.log(restaurantCopy);
 console.log(restaurant);
+
+// REST //
