@@ -35,6 +35,12 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
 restaurant.orderDelivery({
@@ -153,8 +159,8 @@ console.log(mainMenuCopy); // ['Pizza', 'Pasta', 'Risotto']
 const unitedMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(unitedMenu);
 
-// Spread is used for all iterables.
-// Iterables: arrays, strings, maps, sets. NO objects.
+// Spread is used for all iterables and objects.
+// Iterables: arrays, strings, maps, sets.
 
 const text = 'We also can use spread';
 
@@ -182,3 +188,26 @@ console.log(joinedLetters); // 'Jonas S.'
 
 // we can put spread string into function
 console.log(...str); // 'J o n a s'
+
+// A Real-world example of making the order of the pizza
+const ingredients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt("Let's make pasta! Ingredient 2?"),
+  // prompt("Let's make pasta! Ingredient 3?"),
+];
+
+console.log(ingredients);
+
+// way 1
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// way 2
+restaurant.orderPasta(...ingredients);
+
+// spread of objects
+const newRestaurant = { foundedIn: 1998, founder: 'Giuseppe', ...restaurant };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Restaurant Roma';
+console.log(restaurantCopy);
+console.log(restaurant);
