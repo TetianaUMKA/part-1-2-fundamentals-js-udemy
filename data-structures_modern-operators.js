@@ -41,6 +41,11 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 restaurant.orderDelivery({
@@ -242,6 +247,17 @@ addNumbers(2, 3);
 addNumbers(5, 3, 7, 2);
 addNumbers(8, 2, 5, 7, 3, 9, 4, 6);
 
-// At first we spread array and later we do rest for them gathering into array again
+// First, we do 'spread' array, and then we do 'rest' for collecting it in the array again
 const spreadArr = [23, 16, 35];
 addNumbers(...spreadArr);
+
+restaurant.orderPizza(
+  'Chicken',
+  'Mushrooms',
+  'Cheese',
+  'Tomatoes',
+  'Asparagus',
+  'Onion'
+);
+
+restaurant.orderPizza('mushrooms'); // mushrooms [] (because 'rest' will return empty array if don't put any arguments)
