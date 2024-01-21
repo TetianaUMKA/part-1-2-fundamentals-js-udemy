@@ -261,3 +261,12 @@ restaurant.orderPizza(
 );
 
 restaurant.orderPizza('mushrooms'); // mushrooms [] (because 'rest' will return empty array if don't put any arguments)
+
+// The Nullish coalescing operator (??) // it don't skips 'null' and 'undefined', but skips '0'
+
+restaurant.numGuest = 0;
+const guests = restaurant.numGuest || 10;
+console.log(guests); // 10 (it's false value, but we need to skip it like true) therefore 👇
+
+const guestsCorrect = restaurant.numGuest ?? 10;
+console.log(guestsCorrect); // 0
