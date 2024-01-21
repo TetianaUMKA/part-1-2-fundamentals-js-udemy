@@ -220,3 +220,28 @@ const arrSpread = [1, 2, ...[3, 4]];
 
 const [s, d, ...others] = [1, 2, 3, 4, 5, 6, 7, 8];
 console.log(s, d, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+const addNumbers = function (...restNumbers) {
+  let sum = 0;
+  for (let i = 0; i < restNumbers.length; i++) {
+    sum += restNumbers[i];
+  }
+  console.log(sum);
+  console.log(restNumbers);
+};
+addNumbers(2, 3);
+addNumbers(5, 3, 7, 2);
+addNumbers(8, 2, 5, 7, 3, 9, 4, 6);
+
+// At first we spread array and later we do rest for them gathering into array again
+const spreadArr = [23, 16, 35];
+addNumbers(...spreadArr);
