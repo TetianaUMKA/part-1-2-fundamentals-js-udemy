@@ -262,7 +262,8 @@ restaurant.orderPizza(
 
 restaurant.orderPizza('mushrooms'); // mushrooms [] (because 'rest' will return empty array if don't put any arguments)
 
-// The Nullish coalescing operator (??) // it don't skips 'null' and 'undefined', but skips '0'
+// The Nullish coalescing operator (??) //
+// it don't skips 'null' and 'undefined', but skips '0'
 
 restaurant.numGuest = 0;
 const guests = restaurant.numGuest || 10;
@@ -270,3 +271,40 @@ console.log(guests); // 10 (it's false value, but we need to skip it like true) 
 
 const guestsCorrect = restaurant.numGuest ?? 10;
 console.log(guestsCorrect); // 0
+
+// OR assignment operator (||=)
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
+
+rest1.numGuests = rest1.numGuests || 10;
+console.log(rest1.numGuests); // 20
+
+rest1.numGuests ||= 10;
+console.log(rest1.numGuests); // 20
+
+// Nullish assignment operator (??=)
+const rest2 = {
+  name: 'La Pizza',
+  numGuests: 0,
+};
+
+rest2.numGuests ||= 10;
+console.log(rest2.numGuests); // 10
+
+rest2.numGuests ??= 10;
+console.log(rest2.numGuests); // 0
+
+// AND assignment operator (&&=)
+const rest3 = {
+  name: 'La Pizza',
+  numGuests: 12,
+  owner: 'Giovanni Ross',
+};
+
+rest3.owner = rest3.owner && '<ANONYMOUS>';
+console.log(rest3.owner); // <ANONYMOUS>
+
+rest3.owner &&= '<ANONYMOUS>';
+console.log(rest3.owner); // <ANONYMOUS>
