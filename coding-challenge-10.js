@@ -57,3 +57,69 @@ const game = {
     team2: 6.5,
   },
 };
+
+// 1 destructuring array
+const [players1, players2] = game.players;
+console.log(players1, players2);
+
+// 2 rest
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+// 3 spread
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+// 4 spread
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+
+// 5 destructuring object
+// const { team1, x: draw, team2 } = game.odds;
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+
+// 6
+// rest
+let total1 = 0;
+const printGoals1 = function (...playerName) {
+  for (let i = 0; i < playerName.length; i++) {
+    if (playerName[i]) {
+      total1 += 1;
+      console.log(
+        `${playerName[i]} scored a goal. The total number of scored goals is ${total1}`
+      );
+    }
+  }
+};
+printGoals1('Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels');
+
+// spread to rest
+let total2 = 0;
+const printGoals2 = function (...playerName) {
+  for (let i = 0; i < playerName.length; i++) {
+    if (playerName[i]) {
+      total2 += 1;
+      console.log(
+        `${playerName[i]} scored a goal. The total number of scored goals is ${total2}`
+      );
+    }
+  }
+};
+printGoals2(...game.scored);
+
+// 7
+
+// way 1
+team1 < team2 && console.log(`The team 1 is more likely to win`);
+team1 > team2 && console.log(`The team 2 is more likely to win`);
+
+// way 2 further challenge
+const writeMessage = nameTeam => {
+  return `The team ${nameTeam} is more likely to win`;
+};
+
+(team1 < team2 && console.log(writeMessage(`${game.team1}`))) ||
+  (team1 > team2 && console.log(writeMessage(`${game.team2}`)));
