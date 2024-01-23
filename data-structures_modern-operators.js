@@ -308,3 +308,77 @@ console.log(rest3.owner); // <ANONYMOUS>
 
 rest3.owner &&= '<ANONYMOUS>';
 console.log(rest3.owner); // <ANONYMOUS>
+
+// Looping arrays (for of)
+
+const allMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of allMenu) console.log(item);
+
+// we also can get index, but a little bit hard way then general for
+// way 1 old
+for (const item of allMenu.entries()) {
+  console.log(item); //[0, 'Focaccia'], [1, 'Bruschetta'], [2, 'Garlic Bread'] etc.
+  console.log(`${item[0] + 1}: ${item[1]}`); // 1: Focaccia 2: Bruschetta 3: Garlic Bread etc.
+}
+// way 2 modern
+for (const [i, el] of allMenu.entries()) {
+  console.log(i, el); // 0 'Focaccia' 1 'Bruschetta' 2 'Garlic Bread' etc.
+  console.log(`${i + 1}: ${el}`); // 1: Focaccia 2: Bruschetta 3: Garlic Bread etc.
+}
+
+// Enhanced object literals ES6
+
+const enhancedOpeningHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 12,
+    close: 22,
+  },
+  sat: {
+    open: 0,
+    close: 24,
+  },
+};
+const enhancedRestaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti, 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  enhancedOpeningHours,
+
+  [`comment ${43 + 78}`]: 'good',
+
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery(obj) {
+    console.log(obj);
+  },
+
+  orderDelivery2({ starterIndex, mainIndex, time, address }) {
+    console.log(starterIndex, mainIndex, time, address);
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
+};
+
+console.log(enhancedRestaurant);
