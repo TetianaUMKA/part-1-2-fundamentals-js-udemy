@@ -382,3 +382,30 @@ const enhancedRestaurant = {
 };
 
 console.log(enhancedRestaurant);
+
+if (enhancedRestaurant.enhancedOpeningHours.thu.open) {
+  console.log(enhancedRestaurant.enhancedOpeningHours.thu.open); // 12
+}
+
+// if (enhancedRestaurant.enhancedOpeningHours.mon.open) {
+//   // TypeError
+//   console.log(enhancedRestaurant.enhancedOpeningHours.mon.open);
+// }
+
+// Important With optional chaining (?.) we can avoid TypeError, because it return undefined.
+if (enhancedRestaurant.enhancedOpeningHours.sat?.open) {
+  console.log(enhancedRestaurant.enhancedOpeningHours.sat.open);
+}
+if (enhancedRestaurant.enhancedOpeningHours.mon?.open) {
+  console.log(enhancedRestaurant.enhancedOpeningHours.mon.open);
+}
+
+if (enhancedRestaurant.enhancedOpeningHours.thu?.open) {
+  console.log(enhancedRestaurant.enhancedOpeningHours.thu.open); // 12
+}
+
+console.log(enhancedRestaurant.enhancedOpeningHours.sat?.open); // 0
+
+console.log(enhancedRestaurant.enhancedOpeningHours.mon?.open); // undefined
+
+console.log(enhancedRestaurant.enhancedOpeningHours.thu?.open); // 12
