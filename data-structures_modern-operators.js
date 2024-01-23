@@ -409,3 +409,19 @@ console.log(enhancedRestaurant.enhancedOpeningHours.sat?.open); // 0
 console.log(enhancedRestaurant.enhancedOpeningHours.mon?.open); // undefined
 
 console.log(enhancedRestaurant.enhancedOpeningHours.thu?.open); // 12
+
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist'); // ['Focaccia', 'Pasta']
+
+console.log(restaurant.make?.(0, 1) ?? 'Method does not exist'); // Method does not exist
+
+// without (.?) will be Error
+// console.log(restaurant.make(0, 1) ?? 'Method does not exist'); // Error
+
+const users = [
+  { name: 'Jonas', email: 'hello@jonas.io' },
+  { name: 'Monica' },
+  { name: 'Pedro', email: 'hello@pedro.io' },
+];
+
+console.log(users[0]?.email ?? 'not exist'); // hello@jonas.io
+console.log(users[1]?.email ?? 'not exist'); // not exist
