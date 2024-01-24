@@ -173,7 +173,7 @@ console.log(totalValue / number);
 const odds2 = Object.values(game.odds);
 let totalValue2 = 0;
 
-for (const value of Object.values(game.odds)) {
+for (const value of odds2) {
   totalValue2 += value;
 }
 console.log(totalValue2 / odds2.length);
@@ -188,11 +188,23 @@ average /= odds3.length;
 console.log(average);
 
 // 3
-const makeMessage = function () {
-  for (const [])
-  console.log(`Odd of victory Bayern Munich: 1.33`);
+
+const oddsEntries = Object.entries(game.odds);
+for (const [team, odd] of oddsEntries) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
 }
 
-console.log(`Odd of victory Bayern Munich: 1.33`);
-console.log(`Odd of draw: 3.25`);
-console.log(`Odd of victory Borrussia Dortmund: 6.5`);
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
+
+// Important we can get value of object properties by 2 ways
+console.log(game['team1']); // Bayern Munich
+console.log(game.team1); // Bayern Munich
+// More example
+const oddsEntriesExample = Object.entries(game.odds);
+console.log(oddsEntriesExample);
+for (const [team, odd] of oddsEntriesExample) {
+  console.log(`${game[team]}`); // Bayern Munich undefined Borrussia Dortmund
+}
