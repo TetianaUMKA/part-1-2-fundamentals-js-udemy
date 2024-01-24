@@ -164,6 +164,25 @@ for (const value of Object.values(game.odds)) {
   totalValue += value;
   number += 1;
 }
-console.log(Number((totalValue / number).toFixed(2)));
-console.log(Math.round((totalValue / number) * 100).toFixed(2) / 100);
 console.log(totalValue / number);
+
+// console.log(Number((totalValue / number).toFixed(2))); // 3.69
+// console.log(Math.round((totalValue / number) * 100).toFixed(2) / 100); // 3.69
+
+// way 2
+const odds2 = Object.values(game.odds);
+let totalValue2 = 0;
+
+for (const value of Object.values(game.odds)) {
+  totalValue2 += value;
+}
+console.log(totalValue2 / odds2.length);
+
+// way 3
+const odds3 = Object.values(game.odds);
+let average = 0;
+
+for (const value of odds3) average += value;
+
+average /= odds3.length;
+console.log(average);
