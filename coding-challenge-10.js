@@ -186,3 +186,13 @@ for (const value of odds3) average += value;
 
 average /= odds3.length;
 console.log(average);
+
+// 3
+const makeMessage = function () {
+  for (const [])
+  console.log(`Odd of victory Bayern Munich: 1.33`);
+}
+
+console.log(`Odd of victory Bayern Munich: 1.33`);
+console.log(`Odd of draw: 3.25`);
+console.log(`Odd of victory Borrussia Dortmund: 6.5`);
