@@ -208,3 +208,24 @@ console.log(oddsEntriesExample);
 for (const [team, odd] of oddsEntriesExample) {
   console.log(`${game[team]}`); // Bayern Munich undefined Borrussia Dortmund
 }
+
+// Bonus task
+
+// way 1
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
+
+// way 2
+const scorers2 = {};
+for (const player of game.scored) {
+  if (scorers2[player]) {
+    scorers2[player] += 1;
+  } else {
+    scorers2[player] = 1;
+  }
+}
+
+console.log(scorers2);
