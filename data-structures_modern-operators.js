@@ -425,3 +425,39 @@ const users = [
 
 console.log(users[0]?.email ?? 'not exist'); // hello@jonas.io
 console.log(users[1]?.email ?? 'not exist'); // not exist
+
+// Looping the object by indirectly way
+// for property names
+const properties = Object.keys(enhancedOpeningHours);
+console.log(properties); // [tue, fri, sat]
+console.log(properties.length); // 3
+
+for (const day of Object.keys(enhancedOpeningHours)) {
+  console.log(day);
+}
+//the same
+for (const day of properties) {
+  console.log(day);
+}
+
+let openStr = `We are open on ${properties.length} days: `;
+for (const day of properties) {
+  openStr += `${day}`;
+}
+console.log(openStr);
+
+// for property values
+const values = Object.values(enhancedOpeningHours);
+console.log(values); // [{open: 12, close: 22}, {open: 12, close: 22}, {open: 0, close: 24}];
+console.log(values.length); // 3
+
+// Entire object
+
+const entries = Object.entries(enhancedOpeningHours);
+console.log(entries);
+// [key, value]
+for (const [key, { open, close }] of entries) {
+  console.log(
+    `The restaurant work on ${key}: open at ${open} and close at ${close}`
+  );
+}
