@@ -221,6 +221,7 @@ console.log(scorers);
 // way 2
 const scorers2 = {};
 for (const player of game.scored) {
+  console.log(player);
   if (scorers2[player]) {
     scorers2[player] += 1;
   } else {
