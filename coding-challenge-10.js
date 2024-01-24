@@ -1,4 +1,5 @@
 'use strict';
+/// task 1 ///
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
 
@@ -123,3 +124,46 @@ const writeMessage = nameTeam => {
 
 (team1 < team2 && console.log(writeMessage(`${game.team1}`))) ||
   (team1 > team2 && console.log(writeMessage(`${game.team2}`)));
+
+/// task 2 ///
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+
+// 1
+
+for (const [i, playerName] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${playerName}`);
+  /*Goal 1: Lewandowski Goal 2: Gnarby Goal 3: Lewandowski Goal 4: Hummels */
+}
+
+// 2
+
+// way 1
+let totalValue = 0;
+let number = 0;
+
+for (const value of Object.values(game.odds)) {
+  totalValue += value;
+  number += 1;
+}
+console.log(Number((totalValue / number).toFixed(2)));
+console.log(Math.round((totalValue / number) * 100).toFixed(2) / 100);
+console.log(totalValue / number);
