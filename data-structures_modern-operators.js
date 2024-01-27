@@ -484,5 +484,23 @@ orderSet.add('Garlic Bread');
 console.log(orderSet); // Set(4) {'Pasta', 'Pizza', 'Risotto', 'Garlic Bread'}
 orderSet.delete('Risotto');
 console.log(orderSet); // Set(3) {'Pasta', 'Pizza', 'Garlic Bread'}
-orderSet.clear();
-console.log(orderSet); // Set(0) {}
+// orderSet.clear();
+// console.log(orderSet); // Set(0) {}
+
+for (const order of orderSet) console.log(order);
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = new Set(staff);
+console.log(staffUnique); // Set(3) {'Waite', 'Chef', 'Manager'}
+
+const staffNew = [...new Set(staff)];
+console.log(staffNew); // (3) ['Waite', 'Chef', 'Manager']
+
+console.log(staffUnique.size); // 3
+
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+); // 3
+
+console.log(new Set('jonasschmedtmann').size); // 11
