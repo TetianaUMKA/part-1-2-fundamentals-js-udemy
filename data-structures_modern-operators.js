@@ -474,8 +474,15 @@ const orderSet = new Set([
 ]);
 console.log(orderSet); // Set(3) {'Pasta', 'Pizza', 'Risotto'}
 
-console.log(new Set('Jonas')); // set(5) {'J', 'o', 'n', 'a', 's'}
+console.log(new Set('Jonas')); // Set(5) {'J', 'o', 'n', 'a', 's'}
 
 console.log(orderSet.size); // 3
 console.log(orderSet.has('Pizza')); // true
 console.log(orderSet.has('Bread')); // false
+order.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+console.log(orderSet); // Set(4) {'Pasta', 'Pizza', 'Risotto', 'Garlic Bread'}
+orderSet.delete('Risotto');
+console.log(orderSet); // Set(3) {'Pasta', 'Pizza', 'Garlic Bread'}
+orderSet.clear();
+console.log(orderSet); // Set(0) {}
