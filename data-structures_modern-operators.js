@@ -461,3 +461,21 @@ for (const [key, { open, close }] of entries) {
     `The restaurant work on ${key}: open at ${open} and close at ${close}`
   );
 }
+
+// Sets
+
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet); // Set(3) {'Pasta', 'Pizza', 'Risotto'}
+
+console.log(new Set('Jonas')); // set(5) {'J', 'o', 'n', 'a', 's'}
+
+console.log(orderSet.size); // 3
+console.log(orderSet.has('Pizza')); // true
+console.log(orderSet.has('Bread')); // false
