@@ -462,7 +462,7 @@ for (const [key, { open, close }] of entries) {
   );
 }
 
-// Sets
+// SET // is object lets you store unique values of any type. SET is iterable, but has no index.
 
 const orderSet = new Set([
   'Pasta',
@@ -479,7 +479,7 @@ console.log(new Set('Jonas')); // Set(5) {'J', 'o', 'n', 'a', 's'}
 console.log(orderSet.size); // 3
 console.log(orderSet.has('Pizza')); // true
 console.log(orderSet.has('Bread')); // false
-order.add('Garlic Bread');
+orderSet.add('Garlic Bread');
 orderSet.add('Garlic Bread');
 console.log(orderSet); // Set(4) {'Pasta', 'Pizza', 'Risotto', 'Garlic Bread'}
 orderSet.delete('Risotto');
