@@ -504,3 +504,22 @@ console.log(
 ); // 3
 
 console.log(new Set('jonasschmedtmann').size); // 11
+
+// Map // is iterable object holds key-value pairs and remembers the original insertion order of the keys.
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JS'],
+  ['correct', 3],
+  [true, 'CorrectCorrect🎉'],
+  [false, 'Try again!'],
+]);
+console.log(question);
+
+// Convert object to map
+console.log(Object.entries(enhancedOpeningHours));
+
+const hoursMap = new Map(Object.entries(enhancedOpeningHours));
+console.log(hoursMap);
