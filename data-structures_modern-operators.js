@@ -516,7 +516,7 @@ const question = new Map([
   [true, 'Correct answer 🎉'],
   [false, 'Try again!'],
 ]);
-console.log(question);
+console.log(question); // Map(7) {'question' => 'What is the best programming language in the world?', 1 => 'C', 2 => 'Java', 3 => 'JS', 'correct' => 3, …}
 
 // Convert object to map
 console.log(Object.entries(enhancedOpeningHours));
@@ -525,19 +525,22 @@ const hoursMap = new Map(Object.entries(enhancedOpeningHours));
 console.log(hoursMap);
 
 // Convert map to array
+console.log([...question]);
+console.log(...question.keys());
+console.log(...question.values());
 
 // Quiz app
-console.log(question.get('question'));
-for (const [key, value] of question) {
-  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
-}
-const answer = Number(prompt('Your answer'));
-console.log(answer);
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+// const answer = Number(prompt('Your answer'));
+// console.log(answer);
 
-// way 1
-// question.get('correct') === answer
-//   ? console.log(question.get(true))
-//   : console.log(question.get(false));
+// // way 1
+// // question.get('correct') === answer
+// //   ? console.log(question.get(true))
+// //   : console.log(question.get(false));
 
-// way 2
-console.log(question.get(question.get('correct') === answer));
+// // way 2
+// console.log(question.get(question.get('correct') === answer));
