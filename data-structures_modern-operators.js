@@ -526,8 +526,8 @@ console.log(hoursMap);
 
 // Convert map to array
 console.log([...question]);
-console.log(...question.keys());
-console.log(...question.values());
+console.log([...question.keys()]);
+console.log([...question.values()]);
 
 // Quiz app
 // console.log(question.get('question'));
