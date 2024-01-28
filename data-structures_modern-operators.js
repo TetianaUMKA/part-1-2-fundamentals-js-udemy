@@ -520,12 +520,28 @@ rest
   .set(false, 'We are closed :(');
 
 console.log(rest.get('name'));
-console.log(rest.get(true));
+console.log(rest.get(false));
 console.log(rest.get(1));
+
+console.log(rest);
 
 // It is bad readable, but very clever
 const time = 21;
 console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+// console.log(rest.clear);
+
+const arrForMap = [1, 2];
+rest.set(arrForMap, 'Test');
+console.log(rest.get(arrForMap));
+
+// we can even use El as a key
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
 
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
