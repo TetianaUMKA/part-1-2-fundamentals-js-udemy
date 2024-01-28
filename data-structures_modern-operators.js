@@ -513,7 +513,7 @@ const question = new Map([
   [2, 'Java'],
   [3, 'JS'],
   ['correct', 3],
-  [true, 'CorrectCorrect🎉'],
+  [true, 'Correct answer 🎉'],
   [false, 'Try again!'],
 ]);
 console.log(question);
@@ -523,3 +523,21 @@ console.log(Object.entries(enhancedOpeningHours));
 
 const hoursMap = new Map(Object.entries(enhancedOpeningHours));
 console.log(hoursMap);
+
+// Convert map to array
+
+// Quiz app
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+// way 1
+// question.get('correct') === answer
+//   ? console.log(question.get(true))
+//   : console.log(question.get(false));
+
+// way 2
+console.log(question.get(question.get('correct') === answer));
