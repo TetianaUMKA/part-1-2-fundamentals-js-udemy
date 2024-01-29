@@ -554,17 +554,6 @@ const question = new Map([
 ]);
 console.log(question); // Map(7) {'question' => 'What is the best programming language in the world?', 1 => 'C', 2 => 'Java', 3 => 'JS', 'correct' => 3, …}
 
-// Convert object to map
-console.log(Object.entries(enhancedOpeningHours));
-
-const hoursMap = new Map(Object.entries(enhancedOpeningHours));
-console.log(hoursMap);
-
-// Convert map to array
-console.log([...question]);
-console.log([...question.keys()]);
-console.log([...question.values()]);
-
 // Quiz app
 // console.log(question.get('question'));
 // for (const [key, value] of question) {
@@ -580,3 +569,14 @@ console.log([...question.values()]);
 
 // // way 2
 // console.log(question.get(question.get('correct') === answer));
+
+// Convert object to map
+console.log(Object.entries(enhancedOpeningHours));
+
+const hoursMap = new Map(Object.entries(enhancedOpeningHours));
+console.log(hoursMap);
+
+// Convert map to array
+console.log([...question]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
