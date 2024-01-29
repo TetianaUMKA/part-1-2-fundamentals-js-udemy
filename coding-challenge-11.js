@@ -23,3 +23,18 @@ const gameEvents = new Map([
   [80, '⚽️ GOAL'],
   [92, '🔶 Yellow card'],
 ]);
+
+console.log(gameEvents.values());
+console.log(new Set(gameEvents.values()));
+
+// 1
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+// 2
+gameEvents.delete(64);
+
+// 3
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
