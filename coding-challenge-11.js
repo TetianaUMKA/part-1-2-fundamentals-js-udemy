@@ -35,6 +35,33 @@ console.log(events);
 gameEvents.delete(64);
 
 // 3
+
+// The easiest way of message without extra time (2 minutes)
 console.log(
   `An event happened, on average, every ${90 / gameEvents.size} minutes`
 );
+
+// Two way computing with extra time (2 minutes)
+
+// way 1
+// const time = [...gameEvents.keys()];
+// const finishedTime = time[time.length - 1];
+// console.log(finishedTime);
+
+// way 2
+const finishedTime = [...gameEvents.keys()].pop();
+console.log(finishedTime);
+
+console.log(
+  `An event happened, on average, every ${
+    finishedTime / gameEvents.size
+  } minutes`
+);
+
+// 4
+
+for (const [minute, event] of gameEvents) {
+  minute < 45
+    ? console.log(`[FIRST HALF] ${minute}: ${event}`)
+    : console.log(`[SECOND HALF] ${minute}: ${event}`);
+}
