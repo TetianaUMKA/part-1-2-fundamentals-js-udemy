@@ -580,3 +580,30 @@ console.log(hoursMap);
 console.log([...question]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+// Work with strings //
+
+const airline = 'KiyAvia Airline';
+const plane = 'A320';
+
+console.log(plane[0]); // A
+console.log(plane[1]); // 3
+console.log('B737'[0]); // B
+
+console.log(airline.length); // 15
+console.log('B737'.length); // 4
+
+console.log(airline.indexOf('i')); // 1
+console.log(airline.indexOf('g')); // -1
+console.log(airline.indexOf('Airline')); // 8
+console.log(airline.indexOf('airline')); // -1
+console.log(airline.lastIndexOf('i')); // 12
+
+// Slice always returns string that was point out (from, to(not including)). It doesn't change origin string.
+console.log(airline.slice(8)); // Airline
+console.log(airline.slice(8, 11)); // Air
+
+console.log(airline.slice(0, airline.indexOf(' '))); // KiyAvia
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Airline
+console.log(airline.slice(-4)); // line
+console.log(airline.slice(airline.lastIndexOf('A'), -4)); // Air
