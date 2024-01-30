@@ -607,3 +607,22 @@ console.log(airline.slice(0, airline.indexOf(' '))); // KiyAvia
 console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Airline
 console.log(airline.slice(-4)); // line
 console.log(airline.slice(airline.lastIndexOf('A'), -4)); // Air
+
+// Practice
+const checkMiddleSeat = function (seat) {
+  // way 1
+  // if (seat.indexOf('B') === 2 || seat.indexOf('E') === 2) {
+  //   console.log(`The seat ${seat} is the middle seat.`);
+  // }
+  // way 2
+  if (seat.includes('B') || seat.includes('E')) {
+    console.log(`The seat ${seat} is the middle seat.`);
+  }
+  // way 3
+  // if (seat.slice(seat[-1] === 'B') || seat.slice(seat[-1] === 'E')) {
+  //   console.log(`The seat ${seat} is the middle seat.`);
+  // }
+};
+checkMiddleSeat('29B');
+checkMiddleSeat('23C');
+checkMiddleSeat('12E');
