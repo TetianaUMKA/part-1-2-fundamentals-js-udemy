@@ -666,3 +666,18 @@ console.log(plane2.includes('Boeing')); // false
 
 console.log(plane2.startsWith('Air')); // false
 console.log(plane2.startsWith('A320')); // true
+
+if (plane2.startsWith('A') && plane2.endsWith('neo')) {
+  console.log("Part of a new Neo Airlines's family");
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You cannot go on the board');
+  }
+};
+checkBaggage('I have a laptop, some foot and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
