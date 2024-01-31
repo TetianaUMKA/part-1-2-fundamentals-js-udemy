@@ -626,3 +626,19 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('29B');
 checkMiddleSeat('23C');
 checkMiddleSeat('12E');
+
+console.log(airline.toLowerCase()); // kiyavia airline
+console.log(airline.toUpperCase()); // KIYAVIA AIRLINE
+
+// Fix capitalization in name
+const passengerName = 'jOnAS';
+const correctPassengerName =
+  passengerName[0].toUpperCase() + passengerName.slice(1).toLocaleLowerCase();
+console.log(correctPassengerName); // Jonas
+
+// Comparing emails
+const mainEmail = 'hello@jonas.io';
+const loginEmail = ' Hello@Jonas.Io \n';
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
