@@ -675,7 +675,9 @@ if (plane2.startsWith('A') && plane2.endsWith('neo')) {
 const checkBaggage = function (items) {
   const baggage = items.toLowerCase();
   if (baggage.includes('knife') || baggage.includes('gun')) {
-    console.log('You cannot go on the board');
+    console.log('You are not allowed on board');
+  } else {
+    ('Welcome aboard');
   }
 };
 checkBaggage('I have a laptop, some foot and a pocket Knife');
