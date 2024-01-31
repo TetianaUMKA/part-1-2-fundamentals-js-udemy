@@ -636,9 +636,33 @@ const correctPassengerName =
   passengerName[0].toUpperCase() + passengerName.slice(1).toLocaleLowerCase();
 console.log(correctPassengerName); // Jonas
 
-// Comparing emails
+// Comparing emails trim(), trimStart(), trimEnd()
 const mainEmail = 'hello@jonas.io';
 const loginEmail = ' Hello@Jonas.Io \n';
 
 const normalizedEmail = loginEmail.toLowerCase().trim();
-console.log(normalizedEmail);
+console.log(normalizedEmail); // hello@jonas.io
+console.log(mainEmail === normalizedEmail); // true
+
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+
+console.log(announcement.replace('door', 'gate')); // All passengers come to boarding gate 23. Boarding door 23!  // only first
+console.log(announcement.replaceAll('door', 'gate')); // All passengers come to boarding gate 23. Boarding gate 23!  // all of them
+
+// old method (by use the regular expression (/ /g))
+console.log(announcement.replaceAll(/door/g, 'gate')); // All passengers come to boarding gate 23. Boarding gate 23!  // all of them
+
+// return Booleans
+const plane2 = 'A320neo';
+
+console.log(plane2.includes('A320')); // true
+console.log(plane2.includes('Boeing')); // false
+
+console.log(plane2.startsWith('Air')); // false
+console.log(plane2.startsWith('A320')); // true
