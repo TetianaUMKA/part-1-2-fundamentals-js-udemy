@@ -656,7 +656,7 @@ console.log(announcement.replace('door', 'gate')); // All passengers come to boa
 console.log(announcement.replaceAll('door', 'gate')); // All passengers come to boarding gate 23. Boarding gate 23!  // all of them
 
 // old method (by use the regular expression (/ /g))
-console.log(announcement.replaceAll(/door/g, 'gate')); // All passengers come to boarding gate 23. Boarding gate 23!  // all of them
+console.log(announcement.replace(/door/g, 'gate')); // All passengers come to boarding gate 23. Boarding gate 23!  // all of them
 
 // return Booleans
 const plane2 = 'A320neo';
@@ -683,3 +683,11 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some foot and a pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+const newName = ['Mr.', firstName, lastName].join(' ').toUpperCase();
+console.log(newName);
