@@ -35,13 +35,20 @@ document.querySelector('button').addEventListener('click', function () {
   const rows = text.split('\n');
   console.log(rows);
   let icons = [];
+  // way 1
   for (const row of rows) {
     const [first, second] = row.toLowerCase().trim().split('_');
     // console.log(first, second);
     icons.push('✅');
-    const output = `${
-      first + second[0].toUpperCase() + second.slice(1) + icons.join('')
-    }`;
+    // const output = `${(
+    //   first +
+    //   second[0].toUpperCase() +
+    //   second.slice(1)
+    // ).padEnd(20)}${icons.join('')}
+    //   `;
+    const output =
+      (first + second[0].toUpperCase() + second.slice(1)).padEnd(20) +
+      icons.join('');
     console.log(output);
   }
   // way 2
