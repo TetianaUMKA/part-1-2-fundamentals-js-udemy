@@ -720,3 +720,30 @@ const capitalizeName = function (name) {
 };
 capitalizeName('jessica ann smith davis');
 capitalizeName('jonas schmedtmann');
+
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, ' ')); //         Go to gate 23!
+console.log('Welcome!'.padStart(20, '💙💛')); // 💙💛💙💛💙💛Welcome!
+console.log("Let's go!".padEnd(15, '🏀')); // Let's go!🏀🏀🏀🏀
+
+// Mask the card number
+const maskCreditCard = function (number) {
+  // const str = String(number);
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(3456778845634987)); // ************4987
+console.log(maskCreditCard(3487654321789076)); // ************9076
+
+// Repeat
+const message2 = 'Bad weather... All Departures Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩️'.repeat(n)}`);
+};
+planesInLine(9);
+planesInLine(5);
