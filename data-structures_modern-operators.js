@@ -684,6 +684,7 @@ checkBaggage('I have a laptop, some foot and a pocket Knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
 
+// Split and join
 console.log('a+very+nice+string'.split('+'));
 console.log('Jonas Schmedtmann'.split(' '));
 
@@ -691,3 +692,31 @@ const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
 
 const newName = ['Mr.', firstName, lastName].join(' ').toUpperCase();
 console.log(newName);
+
+const capitalizeName = function (name) {
+  const namesArr = name.split(' ');
+  const capitalizedNamesArr = [];
+  // way 1
+  // for (let i = 0; i < namesArr.length; i += 1) {
+  //   const [firstLetter, ...rest] = namesArr[i];
+  //   capitalizedNamesArr.push(firstLetter.toUpperCase() + rest.join(''));
+  // }
+  // way 2
+  // for (const name of namesArr) {
+  //   capitalizedNamesArr.push(name[0].toUpperCase() + name.slice(1));
+  // }
+  // way 3
+  // for (const name of namesArr) {
+  //   const [firstLetter, ...rest] = name;
+  //   capitalizedNamesArr.push(firstLetter.toUpperCase() + rest.join(''));
+  // }
+  //way 4
+  for (const name of namesArr) {
+    capitalizedNamesArr.push(name.replace(name[0], name[0].toUpperCase()));
+  }
+
+  console.log(capitalizedNamesArr);
+  console.log(capitalizedNamesArr.join(' '));
+};
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
