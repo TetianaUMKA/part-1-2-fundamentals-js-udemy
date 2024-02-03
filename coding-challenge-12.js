@@ -26,6 +26,8 @@ Afterwards, test with your own test data!
 
 GOOD LUCK 😀
 */
+document.body.append(document.createElement('p'));
+document.querySelector('p').textContent = 'Coding-challenge-12';
 
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
