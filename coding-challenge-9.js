@@ -16,19 +16,19 @@ printForecast2([12, 5, -5, 0, 4]); //  ... 12ºC in 1 days ... 5ºC in 2 days ..
 function printForecast(arr) {
   let concatenatedString = '';
   for (let i = 0, n = 0; i < arr.length; i++, n++) {
-    let daylyString;
+    let dailyString;
     if (typeof arr[i] !== 'number') {
       n -= 1;
       continue;
     }
     if (i === 0) {
-      daylyString = `... ${arr[i]}ºC in ${n + 1} days`;
-      concatenatedString += daylyString;
+      dailyString = `... ${arr[i]}ºC in ${n + 1} days`;
+      concatenatedString += dailyString;
       continue;
     }
-    daylyString = ` ... ${arr[i]}ºC in ${n + 1} days`;
-    concatenatedString += daylyString;
-    console.log(daylyString);
+    dailyString = ` ... ${arr[i]}ºC in ${n + 1} days`;
+    concatenatedString += dailyString;
+    console.log(dailyString);
   }
   console.log(concatenatedString);
 }
