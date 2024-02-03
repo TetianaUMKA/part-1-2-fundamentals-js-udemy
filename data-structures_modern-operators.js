@@ -792,7 +792,6 @@ for (let i = 0; i < flightsDirection.length; i++) {
 }
 
 console.log(flightsEvent, flightsDirectionFrom, flightsDirectionTo, timeEvent);
-console.log(flightsEvent.length);
 
 for (let i = 0; i < flightsEvent.length; i += 1) {
   if (flightsEvent[i].includes('Delayed')) {
@@ -806,7 +805,6 @@ for (let i = 0; i < flightsEvent.length; i += 1) {
     )
   );
 }
-
 // 🔴 Delayed Departure from FAO to TXL (11h25)
 //              Arrival from BRU to FAO (11h45)
 //   🔴 Delayed Arrival from HEL to FAO (12h05)
