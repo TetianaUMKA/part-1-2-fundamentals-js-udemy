@@ -747,3 +747,62 @@ const planesInLine = function (n) {
 };
 planesInLine(9);
 planesInLine(5);
+
+// Exercise
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const flightsArr = flights.split(';');
+console.log(flightsArr);
+const flightsStr = flightsArr.join(' ').replaceAll('+', ' ');
+console.log(flightsStr);
+
+const flightsArr2 = flightsStr.split(' ');
+console.log(flightsArr2);
+const flightsEvent = [];
+const flightsDirection = [];
+const timeEvent = [];
+
+for (const item of flightsArr2) {
+  if (item.includes('_')) {
+    flightsEvent.push(item);
+  } else if (item.includes(':')) {
+    timeEvent.push(item);
+  } else {
+    flightsDirection.push(item.slice(0, 3).toUpperCase());
+  }
+}
+
+console.log(flightsEvent, flightsDirection, timeEvent);
+
+const flightsDirectionFrom = [];
+const flightsDirectionTo = [];
+
+for (let i = 0; i < flightsDirection.length; i++) {
+  if (i % 2 == 0) {
+    flightsDirectionTo.push(flightsDirection[i]);
+  } else {
+    flightsDirectionFrom.push(flightsDirection[i]);
+  }
+}
+
+console.log(flightsEvent, flightsDirectionFrom, flightsDirectionTo, timeEvent);
+console.log(flightsEvent.length);
+
+for (let i = 0; i < flightsEvent.length; i += 1) {
+  if (flightsEvent[i].includes('Delayed')) {
+    flightsEvent[i] = '🔴' + flightsEvent[i];
+  }
+  console.log(
+    `${flightsEvent[i].replaceAll('_', ' ')} from ${
+      flightsDirectionFrom[i]
+    } to ${flightsDirectionTo[i]} (${timeEvent[i].replace(':', 'h')})`.padStart(
+      44
+    )
+  );
+}
