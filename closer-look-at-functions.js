@@ -82,3 +82,61 @@ const hi = function () {
 document.body.addEventListener('click', hi);
 
 ['Jonas', 'Martha', 'Adam'].forEach(hi);
+
+// Functions returning functions
+
+// way1
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+
+greeterHey('Jonas'); // Hey Jonas
+greeterHey('Steven'); // Hey Steven
+
+greet('Hello')('Jonas');
+
+// way2
+const greet1 = greeting1 => {
+  return function (name) {
+    console.log(`${greeting1} ${name}`);
+  };
+};
+
+const greeting1 = greet1('Welcome home');
+
+greeting1('Monica');
+
+// way 3
+
+const greet2 = greeting => name => console.log(`${greeting} ${name}`);
+
+greet2('Hi')('Jonas');
+greet2('Hey')('Steven');
+
+// The call and apply Methods
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(635, 'John Smith');
+console.log();
+
+const eurowings = {
+  name: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
