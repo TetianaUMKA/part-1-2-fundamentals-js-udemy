@@ -190,3 +190,14 @@ book.call(swiss, 142, 'Lyly Camel');
 console.log(swiss);
 
 // apply
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+// But in modern JS we use Call method with Spread instead of Apply
+console.log(swiss);
+book.call(swiss, ...flightData);
+
+// Bind method
+const bookSA = book.bind(swiss);
+const bookEW = book.bind(eurowings);
+bookSA(23, 'Steven Williams');
+bookEW(45, 'Lucy Grey');
