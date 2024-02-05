@@ -119,18 +119,46 @@ greet2('Hey')('Steven');
 
 // The call and apply Methods
 
-const book = function (flightNum, name) {
-  console.log(
-    `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
-  );
-  this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-};
+// const book = function (flightNum, name) {
+//   console.log(
+//     `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
+//   );
+//   this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+// };
 
+// const lufthansa = {
+//   airline: 'Lufthansa',
+//   iataCode: 'LH',
+//   bookings: [],
+//   book,
+// };
+
+// lufthansa.book(239, 'Jonas Schmedtmann');
+// lufthansa.book(635, 'John Smith');
+// console.log(lufthansa);
+
+// const eurowings = {
+//   airline: 'Eurowings',
+//   iataCode: 'EW',
+//   bookings: [],
+//   book,
+// };
+
+// eurowings.book(555, 'Jared White');
+// eurowings.book(567, 'Monica White');
+// console.log(eurowings);
+
+// call
 const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
   bookings: [],
-  book,
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
 };
 
 lufthansa.book(239, 'Jonas Schmedtmann');
@@ -141,9 +169,24 @@ const eurowings = {
   airline: 'Eurowings',
   iataCode: 'EW',
   bookings: [],
-  book,
 };
 
-eurowings.book(555, 'Jared White');
-eurowings.book(567, 'Monica White');
+const book = lufthansa.book;
+book.call(eurowings, 555, 'Jared White');
+book.call(eurowings, 567, 'Monica White');
 console.log(eurowings);
+
+book.call(lufthansa, 876, 'Deny Brown');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Airline',
+  iataCode: 'SA',
+  bookings: [],
+};
+
+book.call(swiss, 432, 'Lenny Kramer');
+book.call(swiss, 142, 'Lyly Camel');
+console.log(swiss);
+
+// apply
