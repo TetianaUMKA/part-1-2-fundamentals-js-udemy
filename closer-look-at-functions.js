@@ -119,24 +119,31 @@ greet2('Hey')('Steven');
 
 // The call and apply Methods
 
+const book = function (flightNum, name) {
+  console.log(
+    `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
+  );
+  this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+};
+
 const lufthansa = {
   airline: 'Lufthansa',
   iataCode: 'LH',
   bookings: [],
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum} `
-    );
-    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
-  },
+  book,
 };
 
 lufthansa.book(239, 'Jonas Schmedtmann');
 lufthansa.book(635, 'John Smith');
-console.log();
+console.log(lufthansa);
 
 const eurowings = {
-  name: 'Eurowings',
+  airline: 'Eurowings',
   iataCode: 'EW',
   bookings: [],
+  book,
 };
+
+eurowings.book(555, 'Jared White');
+eurowings.book(567, 'Monica White');
+console.log(eurowings);
