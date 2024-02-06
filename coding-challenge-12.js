@@ -30,9 +30,13 @@ document.body.append(document.createElement('p'));
 document.querySelector('p').textContent = 'Coding-challenge-12';
 
 document.body.append(document.createElement('textarea'));
-document.body.append(document.createElement('button'));
 
-document.querySelector('button').addEventListener('click', function () {
+const convertBtn = document.createElement('button');
+convertBtn.classList.add('convert');
+document.body.append(convertBtn);
+convertBtn.textContent = 'convert';
+
+document.querySelector('.convert').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
   const rows = text.split('\n');
   console.log(rows);
