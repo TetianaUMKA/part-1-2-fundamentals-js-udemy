@@ -161,8 +161,8 @@ const lufthansa = {
   },
 };
 
-lufthansa.book(239, 'Jonas Schmedtmann');
-lufthansa.book(635, 'John Smith');
+lufthansa.book(23, 'Jonas Schmedtmann');
+lufthansa.book(63, 'John Smith');
 console.log(lufthansa);
 
 const eurowings = {
@@ -172,11 +172,11 @@ const eurowings = {
 };
 
 const book = lufthansa.book;
-book.call(eurowings, 555, 'Jared White');
-book.call(eurowings, 567, 'Monica White');
+book.call(eurowings, 55, 'Jared White');
+book.call(eurowings, 57, 'Monica White');
 console.log(eurowings);
 
-book.call(lufthansa, 876, 'Deny Brown');
+book.call(lufthansa, 87, 'Deny Brown');
 console.log(lufthansa);
 
 const swiss = {
@@ -185,12 +185,12 @@ const swiss = {
   bookings: [],
 };
 
-book.call(swiss, 432, 'Lenny Kramer');
-book.call(swiss, 142, 'Lyly Camel');
+book.call(swiss, 43, 'Lenny Kramer');
+book.call(swiss, 42, 'Lyly Camel');
 console.log(swiss);
 
 // apply
-const flightData = [583, 'George Cooper'];
+const flightData = [58, 'George Cooper'];
 book.apply(swiss, flightData);
 // But in modern JS we use Call method with Spread instead of Apply
 console.log(swiss);
@@ -201,3 +201,17 @@ const bookSA = book.bind(swiss);
 const bookEW = book.bind(eurowings);
 bookSA(23, 'Steven Williams');
 bookEW(45, 'Lucy Grey');
+
+// we can put multiple arguments as well, that would be used for more specific direction
+const bookEW55 = book.bind(eurowings, 55);
+bookEW55('Sarah Williams');
+bookEW55('Martha Cooper');
+
+// with Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
