@@ -48,16 +48,21 @@ const poll = {
       this.answers.push(answer);
       alert(`Thank's for your answer`);
     } else {
-      alert(`${answer} is incorrect answer. Choose correct option, please.`);
+      alert(`Your answer is incorrect. Choose correct option number, please.`);
     }
-    console.log(this.answers);
 
     // way from mentor
     // typeof answer === 'number' &&
     // answer < this.options.length &&
     // this.answers.push(answer)
     //   ? alert(`Thank's for your answer`)
-    //   : alert(`${answer} is incorrect answer. Choose correct option, please.`);
+    //   : alert(`Your answer is incorrect. Choose correct option, please.`);
+
+    this.displayResults();
+  },
+
+  displayResults() {
+    console.log(this.answers);
   },
 };
 
