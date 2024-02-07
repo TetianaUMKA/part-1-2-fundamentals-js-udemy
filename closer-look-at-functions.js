@@ -239,3 +239,16 @@ const addTaxRate = function (rate) {
 const addVat2 = addTaxRate(0.23);
 console.log(addVat2(100));
 console.log(addVat2(200));
+
+// Immediately Invoked Function Expressions (usually don't used in modern JS)
+// multi use of fn
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+//IIFE (we put into brackets())
+(function () {
+  console.log('This will never run again');
+})();
+
+(() => console.log('This will never run again'))();
