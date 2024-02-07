@@ -62,19 +62,32 @@ const poll = {
     typeof answer === 'number' &&
       answer < this.answers.length &&
       this.answers[answer]++;
-    this.displayResults(); // [0, 1, 0, 0] (e.g)
-    this.displayResults('string'); // Poll results are 0, 1, 0, 0 (e.g)
+
+    this.displayResults(); // [0, 1, 0, 0] // Poll results are 0, 1, 0, 0 (e.g)
+
+    // this.displayResults(); // [0, 1, 0, 0] (e.g)
+    // this.displayResults('string'); // Poll results are 0, 1, 0, 0 (e.g)
   },
 
-  displayResults(type = 'array') {
-    if (type === 'array') {
-      console.log(this.answers);
-    } else if (type === 'string') {
-      console.log(`Poll results are ${this.answers.join(', ')}`);
-    }
+  displayResults() {
+    console.log(this.answers);
+    console.log(`Poll results are ${this.answers.join(', ')}`);
   },
+
+  // displayResults(type = 'array') {
+  //   if (type === 'array') {
+  //     console.log(this.answers);
+  //   } else if (type === 'string') {
+  //     console.log(`Poll results are ${this.answers.join(', ')}`);
+  //   }
+  // },
 };
 
 document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+// example of using method 'displayResults' of the object 'poll' for other objects
+poll.displayResults.call({ answers: [2, 6, 5, 2, 3] });
+// poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+// poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
