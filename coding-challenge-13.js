@@ -34,8 +34,8 @@ const poll = {
   question: 'What is your favorite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   // This generates [0, 0, 0, 0]. More in the next section 😃
-  // answers: new Array(4).fill(0),
-  answers: [],
+  answers: new Array(4).fill(0), // we write result into particular position of the array
+  // answers: [], // we only write result into the array
   registerNewAnswer() {
     const answer = Number(
       prompt(
@@ -43,26 +43,35 @@ const poll = {
       )
     );
     console.log(answer);
-    // my way
-    if (typeof answer === 'number' && answer < this.options.length) {
-      this.answers.push(answer);
-      alert(`Thank's for your answer`);
-    } else {
-      alert(`Your answer is incorrect. Choose correct option number, please.`);
-    }
+    // way 1
+    // if (typeof answer === 'number' && answer < this.options.length) {
+    //   this.answers.push(answer);
+    //   alert(`Thank's for your answer`);
+    // } else {
+    //   alert(`Your answer is incorrect. Choose correct option number, please.`);
+    // }
 
-    // way from mentor
+    // way 2 // short circuit
     // typeof answer === 'number' &&
     // answer < this.options.length &&
     // this.answers.push(answer)
     //   ? alert(`Thank's for your answer`)
     //   : alert(`Your answer is incorrect. Choose correct option, please.`);
 
-    this.displayResults();
+    // way from mentor // short circuit and answers: new Array(4).fill(0)
+    typeof answer === 'number' &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
+    this.displayResults(); // [0, 1, 0, 0] (e.g)
+    this.displayResults('string'); // Poll results are 0, 1, 0, 0 (e.g)
   },
 
-  displayResults() {
-    console.log(this.answers);
+  displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      console.log(`Poll results are ${this.answers.join(', ')}`);
+    }
   },
 };
 
