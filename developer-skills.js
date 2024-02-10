@@ -34,9 +34,9 @@ function determineHighestLowest(arr) {
 const amplitude = determineHighestLowest(temperatures);
 console.log(amplitude);
 
-let amplitudemCurrentMonth;
-amplitudemCurrentMonth = determineHighestLowest(temperatures);
-amplitudemCurrentMonth = determineHighestLowest(temperatures2);
+let amplitudeCurrentMonth;
+amplitudeCurrentMonth = determineHighestLowest(temperatures);
+amplitudeCurrentMonth = determineHighestLowest(temperatures2);
 
 /// second solving - use function to different arrays
 const calcTempAmplitude = function (temps) {
@@ -58,9 +58,9 @@ const calcTempAmplitude = function (temps) {
 const amplitude2 = calcTempAmplitude(temperatures);
 console.log(amplitude2);
 
-let amplitudemCurrentMonth2;
-amplitudemCurrentMonth2 = determineHighestLowest(temperatures);
-amplitudemCurrentMonth2 = determineHighestLowest(temperatures2);
+let amplitudeCurrentMonth2;
+amplitudeCurrentMonth2 = determineHighestLowest(temperatures);
+amplitudeCurrentMonth2 = determineHighestLowest(temperatures2);
 
 /// third solving - put two arrays together into function
 function determineHighestLowest2(arr1, arr2) {
@@ -95,7 +95,7 @@ const measureKelvin = function () {
   const measurement = {
     type: 'temp',
     unit: 'celsius',
-    // value: Number(prompt('Degress celsius:')), // FIND AND FIX (added Number because I need to return typeof 'number')
+    // value: Number(prompt('Degrees celsius:')), // FIND AND FIX (added Number because I need to return typeof 'number')
     value: 5,
   };
   const kelvin = measurement.value + 273;
