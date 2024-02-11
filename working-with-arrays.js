@@ -54,3 +54,4 @@ console.log(arrAt.slice(-1)); // [64]
 console.log(arrAt.slice(-1)[0]); // 64
 // way 3
 console.log(arrAt.at(-1)); // 64
+console.log(arrAt.at(-2)); // 11
