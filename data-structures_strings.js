@@ -8,6 +8,8 @@ const plane = 'A320';
 console.log(plane[0]); // A
 console.log(plane[1]); // 3
 console.log('B737'[0]); // B
+console.log(plane[plane.length - 1]); // 0
+console.log(plane.at(-1)); //0
 
 console.log(airline.length); // 15
 console.log('B737'.length); // 4
