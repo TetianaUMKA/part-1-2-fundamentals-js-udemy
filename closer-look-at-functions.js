@@ -322,9 +322,17 @@ boardPassengers(180, 3);
 
   document.querySelector('body').addEventListener('click', function () {
     header[0].style.color = 'red';
-    header[1].style.color = 'blue';
-    header[2].style.color = 'yellow';
-    header[3].style.color = 'tomato';
-    header[4].style.color = 'purple';
+    setTimeout(function () {
+      header[1].style.color = 'blue';
+    }, 1000);
+    setTimeout(function () {
+      header[2].style.color = 'yellow';
+    }, 1500);
+    setTimeout(function () {
+      header[3].style.color = 'tomato';
+    }, 2500);
+    setTimeout(function () {
+      header[4].style.color = 'purple';
+    }, 3000);
   });
 })();
