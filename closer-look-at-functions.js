@@ -317,9 +317,14 @@ boardPassengers(180, 3);
 // Coding-challenge
 
 (function () {
-  const header = document.querySelector('h1');
-  header.style.color = 'red';
+  const header = document.querySelectorAll('h1');
+  header[0].style.color = 'grey';
+
   document.querySelector('body').addEventListener('click', function () {
-    header.style.color = 'blue';
+    header[0].style.color = 'red';
+    header[1].style.color = 'blue';
+    header[2].style.color = 'yellow';
+    header[3].style.color = 'tomato';
+    header[4].style.color = 'purple';
   });
 })();
