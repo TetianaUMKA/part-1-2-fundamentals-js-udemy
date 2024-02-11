@@ -55,3 +55,62 @@ console.log(arrAt.slice(-1)[0]); // 64
 // way 3
 console.log(arrAt.at(-1)); // 64
 console.log(arrAt.at(-2)); // 11
+
+// Looping Arrays: forEach
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// Example 1
+// way 1
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`); //Important Math.abs method takes out minus(-)
+  }
+}
+console.log('---forEach---');
+// way 2
+movements.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
+
+// Example 2
+// way 1
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: you deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: you withdrew ${Math.abs(movement)}`);
+  }
+}
+console.log('---forEach---');
+// way 2
+movements.forEach(function (movement, i) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: you deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: you withdrew ${Math.abs(movement)}`);
+  }
+});
+
+// we can get (item, i, arr) by using forEach Important
+const guestHotelList = [
+  'Monica',
+  'Jonas',
+  'Tetiana',
+  'Maria',
+  'Simon',
+  'Vicky',
+];
+
+guestHotelList.forEach(function (guest, i, arr) {
+  console.log(
+    `The room number ${i} is belong ${guest}. List of guests in the queue: ${arr.slice(
+      i + 1
+    )})}`
+  );
+});
