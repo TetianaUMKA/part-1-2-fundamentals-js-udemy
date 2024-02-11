@@ -56,7 +56,7 @@ console.log(arrAt.slice(-1)[0]); // 64
 console.log(arrAt.at(-1)); // 64
 console.log(arrAt.at(-2)); // 11
 
-// Looping Arrays: forEach
+// Looping Arrays: forEach, but we can  use break or continue
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // Example 1
@@ -113,4 +113,27 @@ guestHotelList.forEach(function (guest, i, arr) {
       i + 1
     )})}`
   );
+});
+
+// forEach With Maps and Sets
+// Map
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+console.log(currencies); // Map(3) {'USD' => 'United States dollar', 'EUR' => 'Euro', 'GBP' => 'Pound sterling'}
+
+// we can also use (value, key, map) or (value, key, _), if it is necessary
+currencies.forEach(function (value, key) {
+  console.log(`${key}: ${value}.`);
+});
+
+// Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique); // Set(3) {'USD', 'GBP', 'EUR'}
+
+// we can also use (value, _, set) or (value, _, _), if it is necessary
+currenciesUnique.forEach(function (value) {
+  console.log(`${value}`);
 });
