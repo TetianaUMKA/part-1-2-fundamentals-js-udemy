@@ -134,6 +134,9 @@ const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
 console.log(currenciesUnique); // Set(3) {'USD', 'GBP', 'EUR'}
 
 // we can also use (value, _, set) or (value, _, _), if it is necessary
-currenciesUnique.forEach(function (value) {
+currenciesUnique.forEach(function (value, _, set) {
+  console.log(_);
+  const insideSet = [...set];
+  console.log(insideSet);
   console.log(`${value}`);
 });
