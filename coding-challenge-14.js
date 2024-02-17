@@ -1,7 +1,7 @@
 'strict';
 
 /* 
-Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array (one array for each). For now, they are just interested in knowing whether a dog is an adult or a puppy. A dog is an adult if it is at least 3 years old, and it's a puppy if it's less than 3 years old.
+Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array(one array for each) and two separate for puppy and adult. For now, they are just interested in knowing whether a dog is an adult or a puppy. A dog is an adult if it is at least 3 years old, and it's a puppy if it's less than 3 years old.
 
 Create a function 'checkDogs', which accepts 2 arrays of dog's ages ('dogsJulia' and 'dogsKate'), and does the following things:
 
@@ -21,9 +21,22 @@ GOOD LUCK 😀
 const checkDogs = function (dogsJulia, dogsKate) {
   const adultDogs = [];
   const puppyDogs = [];
-  const correctedDogsJulia = dogsJulia.slice(1, -1);
-  const unitedDogs = correctedDogsJulia.concat(dogsKate);
-  unitedDogs.forEach(function (dog, index) {
+
+  // way 1
+  // const correctedDogsJulia = dogsJulia.slice(1, -1);
+  // const unitedDogs = correctedDogsJulia.concat(dogsKate);
+  // unitedDogs.forEach(function (dog, index) {
+  //   dog < 3
+  //     ? (puppyDogs.push(dog),
+  //       console.log(`Dog number ${index + 1} is still a puppy 🐶`))
+  //     : (adultDogs.push(dog),
+  //       console.log(
+  //         `Dog number ${index + 1} is an adult, and is ${dog} years old`
+  //       ));
+  // });
+
+  // way 2
+  dogsKate.concat(dogsJulia.slice(1, -1)).forEach(function (dog, index) {
     dog < 3
       ? (puppyDogs.push(dog),
         console.log(`Dog number ${index + 1} is still a puppy 🐶`))
@@ -33,16 +46,23 @@ const checkDogs = function (dogsJulia, dogsKate) {
         ));
   });
 
-  // dogsKate.concat(dogsJulia.slice(1, -1)).forEach(function (dog, index) {
-  //   dog < 3
-  //     ? (puppyDogs.push(dog),
-  //       console.log(`Dog number ${index + 1} is still a puppy 🐶`))
-  //     : (adultDogs.push(dog),
-  //       console.log(
-  //         `Dog number ${index + 1} is an adult, and is ${dog} years old`
-  //       ));
+  // way from mentor
+  // const correctedDogsJulia = dogsJulia.slice(1, -1);
+  // const unitedDogs = correctedDogsJulia.concat(dogsKate);
+  // unitedDogs.forEach(function (dog, index) {
+  //   if (dog >= 3) {
+  //     puppyDogs.push(dog);
+  //     console.log(`Dog number ${index + 1} is still a puppy 🐶`);
+  //   } else {
+  //     adultDogs.push(dog);
+  //     console.log(
+  //       `Dog number ${index + 1} is an adult, and is ${dog} years old`
+  //     );
+  //   }
   // });
-  // console.log(puppyDogs, adultDogs);
+
+  console.log(puppyDogs, adultDogs);
 };
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
