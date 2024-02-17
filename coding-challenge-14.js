@@ -17,3 +17,32 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  const adultDogs = [];
+  const puppyDogs = [];
+  const correctedDogsJulia = dogsJulia.slice(1, -1);
+  const unitedDogs = correctedDogsJulia.concat(dogsKate);
+  unitedDogs.forEach(function (dog, index) {
+    dog < 3
+      ? (puppyDogs.push(dog),
+        console.log(`Dog number ${index + 1} is still a puppy 🐶`))
+      : (adultDogs.push(dog),
+        console.log(
+          `Dog number ${index + 1} is an adult, and is ${dog} years old`
+        ));
+  });
+
+  // dogsKate.concat(dogsJulia.slice(1, -1)).forEach(function (dog, index) {
+  //   dog < 3
+  //     ? (puppyDogs.push(dog),
+  //       console.log(`Dog number ${index + 1} is still a puppy 🐶`))
+  //     : (adultDogs.push(dog),
+  //       console.log(
+  //         `Dog number ${index + 1} is an adult, and is ${dog} years old`
+  //       ));
+  // });
+  // console.log(puppyDogs, adultDogs);
+};
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
