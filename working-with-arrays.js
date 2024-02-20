@@ -140,3 +140,10 @@ currenciesUnique.forEach(function (value, _, set) {
   console.log(insideSet);
   console.log(`${value}`);
 });
+
+// Method 'map' gives us possibility to loop array by mapping result in a new array that will be returned.
+const movements2 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// Method 'filter' returns a new array containing the array elements that passed a specified test condition
+
+// Method 'reduce' boils all array elements down to one single value
