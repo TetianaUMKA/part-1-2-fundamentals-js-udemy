@@ -170,13 +170,34 @@ const movementsUSD2 = movements2.map(mov => mov * eurToUsd);
 console.log(movementsUSD2);
 
 // one more example of using arrow function instead of regular function as callback of map
+// way 1
 const movementDescription = movements.map((mov, i, arr) => {
   if (mov > 0) {
-    console.log(`Movement ${i + 1}: you deposited ${mov}`);
+    return `Movement ${i + 1}: you deposited ${mov}`;
   } else {
-    console.log(`Movement ${i + 1}: you withdrew ${Math.abs(mov)}`);
+    return `Movement ${i + 1}: you withdrew ${Math.abs(mov)}`;
   }
 });
+console.log(movementDescription);
+// [
+//   'Movement 1: you deposited 200',
+//   'Movement 2: you deposited 450',
+//   'Movement 3: you withdrew 400',
+//   'Movement 4: you deposited 3000',
+//   'Movement 5: you withdrew 650',
+//   'Movement 6: you withdrew 130',
+//   'Movement 7: you deposited 70',
+//   'Movement 8: you deposited 1300',
+// ];
+
+// way 2
+const movementDescription2 = movements.map(
+  (mov, i, arr) =>
+    `Movement ${i + 1}: you ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementDescription2);
 
 // Method 'filter' returns a new array containing the array elements that passed a specified test condition
 
