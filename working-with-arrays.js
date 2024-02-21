@@ -171,7 +171,7 @@ console.log(movementsUSD2);
 
 // one more example of using arrow function instead of regular function as callback of map
 // way 1
-const movementDescription = movements.map((mov, i, arr) => {
+const movementDescription = movements.map((mov, i) => {
   if (mov > 0) {
     return `Movement ${i + 1}: you deposited ${mov}`;
   } else {
@@ -192,7 +192,7 @@ console.log(movementDescription);
 
 // way 2
 const movementDescription2 = movements.map(
-  (mov, i, arr) =>
+  (mov, i) =>
     `Movement ${i + 1}: you ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
       mov
     )}`
