@@ -199,6 +199,19 @@ const movementDescription2 = movements.map(
 );
 console.log(movementDescription2);
 
+// the further example of using 'map'
+
+const createUsernames = function (user) {
+  const username = user
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  return username;
+};
+
+console.log(createUsernames('Steven Thomas Williams'));
+
 // Method 'filter' returns a new array containing the array elements that passed a specified test condition
 
 // Method 'reduce' boils all array elements down to one single value
