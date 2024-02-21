@@ -97,6 +97,18 @@ movements.forEach(function (movement, i) {
   }
 });
 
+// one more example of using forEach
+
+const uahToEur = 38.9;
+const movementsEur = [];
+
+movements.forEach(function (mov) {
+  movementsEur.push(mov / uahToEur);
+});
+
+console.log(movements);
+console.log(movementsEur);
+
 // we can get (item, i, arr) by using forEach Important
 const guestHotelList = [
   'Monica',
@@ -143,6 +155,28 @@ currenciesUnique.forEach(function (value, _, set) {
 
 // Method 'map' gives us possibility to loop array by mapping result in a new array that will be returned.
 const movements2 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+// way 1
+const movementsUSD = movements2.map(function (mov) {
+  return mov * eurToUsd;
+});
+console.log(movements2);
+console.log(movementsUSD);
+
+// way 2  by using arrow function
+const movementsUSD2 = movements2.map(mov => mov * eurToUsd);
+console.log(movementsUSD2);
+
+// one more example of using arrow function instead of regular function as callback of map
+const movementDescription = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: you deposited ${mov}`);
+  } else {
+    console.log(`Movement ${i + 1}: you withdrew ${Math.abs(mov)}`);
+  }
+});
 
 // Method 'filter' returns a new array containing the array elements that passed a specified test condition
 
