@@ -214,4 +214,8 @@ console.log(createUsernames('Steven Thomas Williams'));
 
 // Method 'filter' returns a new array containing the array elements that passed a specified test condition
 
+const deposits = movements2.filter(mov => mov > 0);
+
+console.log(deposits);
+
 // Method 'reduce' boils all array elements down to one single value
