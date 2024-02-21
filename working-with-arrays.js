@@ -218,4 +218,8 @@ const deposits = movements2.filter(mov => mov > 0);
 
 console.log(deposits);
 
+const withdrawals = movements2.filter(mov => mov < 0);
+
+console.log(withdrawals);
+
 // Method 'reduce' boils all array elements down to one single value
