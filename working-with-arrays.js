@@ -245,3 +245,14 @@ const balance3 = movements2.reduce((accumulator, currentValue, i, arr) => {
   return accumulator + currentValue;
 }, 2000);
 console.log(`balance3: ${balance3}`);
+
+// Maximum value by using reduce
+const maxWithReduce = movements2.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements2[0]);
+console.log(maxWithReduce);
+
+// the same but easier😅
+const maxWithMath = Math.max(...movements2);
+console.log(maxWithMath);
