@@ -224,7 +224,24 @@ console.log(withdrawals);
 
 // Method 'reduce' boils all array elements down to one single value
 
-const balance = movements2.reduce(
-  (accumulator, currentValue, i, arr) => accumulator + currentValue
+// InitialValue = 0 is default value in this case, as it does not need to be specified
+const balance = movements2.reduce((accumulator, currentValue, i, arr) => {
+  console.log(`Iteration ${i}: ${accumulator}`);
+  return accumulator + currentValue;
+});
+console.log(`balance: ${balance}`);
+
+// InitialValue is put by us in variable
+const initialValue = 1000;
+const balance2 = movements2.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
 );
-console.log(balance);
+console.log(`balance2: ${balance2}`);
+
+// We determine needed InitialValue in this case
+const balance3 = movements2.reduce((accumulator, currentValue, i, arr) => {
+  console.log(`Iteration ${i}: ${accumulator}`);
+  return accumulator + currentValue;
+}, 2000);
+console.log(`balance3: ${balance3}`);
