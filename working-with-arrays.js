@@ -223,3 +223,8 @@ const withdrawals = movements2.filter(mov => mov < 0);
 console.log(withdrawals);
 
 // Method 'reduce' boils all array elements down to one single value
+
+const balance = movements2.reduce(
+  (accumulator, currentValue, i, arr) => accumulator + currentValue
+);
+console.log(balance);
