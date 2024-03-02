@@ -256,3 +256,12 @@ console.log(maxWithReduce);
 // the same but easier😅
 const maxWithMath = Math.max(...movements2);
 console.log(maxWithMath);
+
+// Chaining Methods
+const eurToUsd2 = 1.1;
+const totalDepositsUSD = movements2
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd2)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);
