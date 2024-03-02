@@ -1,5 +1,6 @@
 'strict';
 
+// Coding Challenge #1
 /* 
 Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array(one array for each) and two separate for puppy and adult. For now, they are just interested in knowing whether a dog is an adult or a puppy. A dog is an adult if it is at least 3 years old, and it's a puppy if it's less than 3 years old.
 
@@ -113,3 +114,25 @@ calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 // const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 // console.log(avg1, avg2);
+
+// Coding Challenge #3
+
+/* 
+Rewrite the 'calcAverageHumanAge' function from the previous challenge, but this time as an arrow function, and using chaining!
+
+TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
+TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+
+GOOD LUCK 😀
+*/
+
+const calcAverageHumanAge2 = function (dogAges) {
+  const averageHumanAge2 = dogAges
+    .map(dogAge => (dogAge <= 2 ? 2 * dogAge : 16 + dogAge * 4))
+    .filter(humanAge => humanAge >= 18)
+    .reduce((acc, humanAge, _, arr) => acc + humanAge / arr.length, 0);
+  console.log(averageHumanAge2);
+};
+
+calcAverageHumanAge2([5, 2, 4, 1, 15, 8, 3]);
+calcAverageHumanAge2([16, 6, 10, 5, 6, 1, 4]);
