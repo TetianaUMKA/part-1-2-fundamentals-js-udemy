@@ -265,3 +265,48 @@ const totalDepositsUSD = movements2
   .reduce((acc, mov) => acc + mov, 0);
 
 console.log(totalDepositsUSD);
+
+// Method 'find' return the first element of the array that satisfy this conditional
+
+const firstWithdrawal = movements2.find(mov => mov < 0);
+console.log(movements2);
+console.log(firstWithdrawal);
+
+// Example of using
+const accountA = {
+  name: 'Monica',
+  city: 'Monterey',
+  balance: 2358,
+  password: 'M100',
+};
+
+const accountB = {
+  name: 'Jonas',
+  city: 'Madrid',
+  balance: 8765,
+  password: 'J200',
+};
+
+const accountC = {
+  name: 'Samantha',
+  city: 'Monte Carlo',
+  balance: 116543,
+  password: 'S200',
+};
+
+const accounts = [accountA, accountB, accountC];
+
+const account = accounts.find(account => account.password === 'S200');
+console.log(account);
+
+// compare with 'for' loop
+
+const foundAccount = function (accounts) {
+  for (const acc of accounts) {
+    if (acc.password === 'S200') {
+      return acc;
+    }
+  }
+};
+const accountFor = foundAccount(accounts);
+console.log(accountFor);
