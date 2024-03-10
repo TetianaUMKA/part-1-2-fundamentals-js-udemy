@@ -317,7 +317,13 @@ const index = accounts.findIndex(account => account.name === 'Jonas');
 console.log(index); // 1
 console.log(accounts[1]);
 
-// some
+// some  // we use method 'some' instead of includes when we want to know there are such elements that meet the condition or not
 
 const movements3 = [200, 450, -400, 3000, -650, -130, 70, 1300];
 console.log(movements3.includes(-130)); // true
+
+const anyDeposits = movements3.some(mov => mov > 0);
+console.log(anyDeposits); // true
+
+const checkedSum = movements3.some(mov => mov > 2000);
+console.log(checkedSum); // true
