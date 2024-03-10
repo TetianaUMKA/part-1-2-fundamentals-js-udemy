@@ -310,3 +310,14 @@ const foundAccount = function (accounts) {
 };
 const accountFor = foundAccount(accounts);
 console.log(accountFor);
+
+// findIndex
+
+const index = accounts.findIndex(account => account.name === 'Jonas');
+console.log(index); // 1
+console.log(accounts[1]);
+
+// some
+
+const movements3 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements3.includes(-130)); // true
